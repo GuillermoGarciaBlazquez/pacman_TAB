@@ -52,19 +52,18 @@ class PacmanDataset(Dataset):
 class PacmanNet(nn.Module):
     def __init__(self, input_size, hidden_size, output_size):
         super(PacmanNet, self).__init__()
-        
-        # Calcular el tamaño total de entrada (aplanar la matriz)
         self.input_features = input_size[0] * input_size[1]
-        
-        # Capas fully connected (feedforward)
-        self.fc1 = nn.Linear(self.input_features, hidden_size * 2)
-        self.fc2 = nn.Linear(hidden_size * 2, hidden_size)
-        self.fc3 = nn.Linear(hidden_size, output_size)
-        
-        # Activaciones
-        self.relu = nn.ReLU()
-        self.dropout = nn.Dropout(0.3)
-    
+        # Nuevo variante архитектуры
+        self.fc1 = nn.Linear(self.input_features, hidden_size * 4)
+        self.bn1 = nn.BatchNorm1d(hidden_size * 4)
+        self.fc2 = nn.Linear(hidden_size * 4, hidden_size * 2)
+        self.bn2 = nn.BatchNorm1d(hidden_size * 2)
+        self.fc3 = nn.Linear(hidden_size * 2, hidden_size)
+        self.bn3 = nn.BatchNorm1d(hidden_size)
+        self.fc4 = nn.Linear(hidden_size, output_size)
+        self.act = nn.LeakyReLU(0.1)
+        self.dropout = nn.Dropout(0.4)
+
     def forward(self, x):
         # Input shape: (batch_size, height, width)
         #print(f"Forma de entrada: {x.shape}")
@@ -72,15 +71,17 @@ class PacmanNet(nn.Module):
         x = x.view(x.size(0), -1)  # Shape: (batch_size, height*width)
         
         # Capas fully connected
-        x = self.relu(self.fc1(x))
+        x = self.act(self.bn1(self.fc1(x)))
         x = self.dropout(x)
-        x = self.relu(self.fc2(x))
+        x = self.act(self.bn2(self.fc2(x)))
         x = self.dropout(x)
-        x = self.fc3(x)
+        x = self.act(self.bn3(self.fc3(x)))
+        x = self.dropout(x)
+        x = self.fc4(x)
         
         return x
 
-def load_and_merge_data(data_dir="pacman_data"):
+def load_and_merge_data(data_dir="pacman_wins"):
     """Carga todos los archivos CSV de partidas y los combina en un único DataFrame"""
     all_maps = []
     all_actions = []
@@ -212,6 +213,26 @@ def save_model(model, input_size, model_path="models/pacman_model.pth"):
     torch.save(model_info, model_path)
     print(f'Modelo guardado en {model_path}')
 
+def evaluate_model(model, test_loader, device):
+    model.eval()
+    criterion = nn.CrossEntropyLoss()
+    test_loss = 0.0
+    test_correct = 0
+    test_total = 0
+
+    with torch.no_grad():
+        for maps, actions in test_loader:
+            maps, actions = maps.to(device), actions.to(device)
+            outputs = model(maps)
+            loss = criterion(outputs, actions)
+            test_loss += loss.item()
+            _, predicted = outputs.max(1)
+            test_total += actions.size(0)
+            test_correct += predicted.eq(actions).sum().item()
+    test_accuracy = 100. * test_correct / test_total
+    avg_loss = test_loss / len(test_loader)
+    print(f"Test accuracy: {test_accuracy:.2f}% | Test loss: {avg_loss:.4f}")
+
 def main():
     import time
     start_time = time.time()
@@ -248,6 +269,8 @@ def main():
     
     # Guardar modelo
     save_model(trained_model, input_size)
+    # Проверка модели на тесте
+    evaluate_model(trained_model, test_loader, device)
     print(f"Tiempo total de ejecución: {time.time() - start_time:.2f} segundos")
 if __name__ == "__main__":
     main()

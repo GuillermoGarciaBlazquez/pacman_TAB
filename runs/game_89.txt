@@ -1,0 +1,7 @@
+Reply mode: False
+Pacman emerges victorious! Score: 1700
+Datos del juego 89 guardados en pacman_data/game_89.csv
+Average Score: 1700.0
+Scores:        1700.0
+Win Rate:      1/1 (1.00)
+Record:        Win

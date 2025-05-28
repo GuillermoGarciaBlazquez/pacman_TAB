@@ -7,6 +7,9 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import seed  # Импортируем seed как модуль
+import sys
+import csv
+import matplotlib.pyplot as plt
 
 # This script implements Deep Q-Learning (DQN) for Pacman.
 # The agent interacts with the environment, collects experience (state, action, reward, next_state, done),
@@ -127,6 +130,29 @@ def save_model(model, input_size, model_path="models/pacman_dqn.pth"):
     print(f'Model saved to {model_path}')
     print(f"Saved model keys: {list(model_info.keys())}")
 
+# --- Metrics/Logging/Plotting Setup ---
+MODEL_VERSION = "v1.0"
+MODEL_NAME = f"pacman_dqn_{MODEL_VERSION}"
+LOGS_DIR = "logs"
+METRICS_DIR = "metrics"
+os.makedirs(LOGS_DIR, exist_ok=True)
+os.makedirs(METRICS_DIR, exist_ok=True)
+LOG_FILE = os.path.join(LOGS_DIR, f"{MODEL_NAME}.log")
+CSV_FILE = os.path.join(METRICS_DIR, f"{MODEL_NAME}_metrics.csv")
+PLOT_FILE = os.path.join(METRICS_DIR, f"{MODEL_NAME}_metrics.png")
+
+class Logger(object):
+    def __init__(self, filename):
+        self.terminal = sys.stdout
+        self.log = open(filename, "w", encoding="utf-8")
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)
+    def flush(self):
+        self.terminal.flush()
+        self.log.flush()
+sys.stdout = Logger(LOG_FILE)
+
 def main():
     import time
     start_time = time.time()
@@ -158,6 +184,20 @@ def main():
     episode_losses = []
     episode_wins = []
     episode_losses_count = []
+    episode_lengths = []
+    episode_max_q = []
+    episode_min_q = []
+    episode_mean_q = []
+    episode_loss_std = []
+    episode_reward_std = []
+
+    # Prepare CSV for metrics
+    with open(CSV_FILE, "w", newline='', encoding="utf-8") as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow([
+            "episode", "reward", "avg_loss", "loss_std", "reward_std", "win", "lose", "length",
+            "max_q", "min_q", "mean_q", "epsilon"
+        ])
 
     for episode in range(NUM_EPISODES):
         # Меняем сид только раз в 500 эпизодов
@@ -171,12 +211,19 @@ def main():
         state = env.reset()
         total_reward = 0
         losses = []
+        q_values_list = []
         done = False
         win = False
         lose = False
 
         for t in range(MAX_STEPS):
             action = select_action(state, policy_net, epsilon, device)
+            # --- Metrics: Q-values ---
+            with torch.no_grad():
+                policy_net.eval()
+                s = torch.FloatTensor(state).unsqueeze(0).to(device)
+                q_values = policy_net(s).cpu().numpy().flatten()
+                q_values_list.append(q_values)
             next_state, reward, done, info = env.step(action)
             memory.push(state, action, reward, next_state, float(done))
             state = next_state
@@ -218,10 +265,31 @@ def main():
                 break
 
         avg_loss = np.mean(losses) if losses else 0.0
+        std_loss = np.std(losses) if losses else 0.0
+        std_reward = np.std([total_reward])  # For single episode, will be 0, but for batch can be used
+        q_values_arr = np.array(q_values_list).reshape(-1, NUM_ACTIONS) if q_values_list else np.zeros((1, NUM_ACTIONS))
+        max_q = np.max(q_values_arr)
+        min_q = np.min(q_values_arr)
+        mean_q = np.mean(q_values_arr)
+
         episode_rewards.append(total_reward)
         episode_losses.append(avg_loss)
         episode_wins.append(int(win))
         episode_losses_count.append(int(lose))
+        episode_lengths.append(t + 1)
+        episode_max_q.append(max_q)
+        episode_min_q.append(min_q)
+        episode_mean_q.append(mean_q)
+        episode_loss_std.append(std_loss)
+        episode_reward_std.append(std_reward)
+
+        # Save metrics to CSV
+        with open(CSV_FILE, "a", newline='', encoding="utf-8") as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerow([
+                episode+1, total_reward, avg_loss, std_loss, std_reward, int(win), int(lose), t+1,
+                max_q, min_q, mean_q, epsilon
+            ])
 
         epsilon = max(EPS_END, epsilon * EPS_DECAY)
         if episode % TARGET_UPDATE == 0:
@@ -232,7 +300,7 @@ def main():
               f"Avg loss: {avg_loss:.4f} | "
               f"Epsilon: {epsilon:.3f} | "
               f"{'WIN' if win else ('LOSE' if lose else '')} | "
-              f"MEMORY_SIZE: {len(memory)}"
+              f"MEMORY_SIZE: {len(memory)} | "
               f"SEED: {getattr(seed, 'PACMAN_SEED', 'N/A')}")
 
         # Каждые 100 эпизодов выводим агрегированные метрики
@@ -246,8 +314,46 @@ def main():
                   f"Win rate: {win_rate:.1f}% | Lose rate: {lose_rate:.1f}%")
             print("-------------------------")
 
-    save_model(policy_net, input_shape)
+    save_model(policy_net, input_shape, model_path=f"models/{MODEL_NAME}.pth")
     print(f"Total execution time: {time.time() - start_time:.2f} seconds")
+
+    # Plot metrics
+    plt.figure(figsize=(16, 10))
+    plt.subplot(2, 2, 1)
+    plt.plot(episode_rewards, label="Reward")
+    plt.xlabel("Episode")
+    plt.ylabel("Reward")
+    plt.title("Episode Reward")
+    plt.legend()
+
+    plt.subplot(2, 2, 2)
+    plt.plot(episode_losses, label="Avg Loss")
+    plt.plot(episode_loss_std, label="Loss Std", alpha=0.5)
+    plt.xlabel("Episode")
+    plt.ylabel("Loss")
+    plt.title("Loss")
+    plt.legend()
+
+    plt.subplot(2, 2, 3)
+    plt.plot(episode_max_q, label="Max Q")
+    plt.plot(episode_min_q, label="Min Q")
+    plt.plot(episode_mean_q, label="Mean Q")
+    plt.xlabel("Episode")
+    plt.ylabel("Q-value")
+    plt.title("Q-values")
+    plt.legend()
+
+    plt.subplot(2, 2, 4)
+    win_rate_curve = np.convolve(episode_wins, np.ones(100)/100, mode='valid')
+    plt.plot(win_rate_curve, label="Win Rate (window=100)")
+    plt.xlabel("Episode")
+    plt.ylabel("Win Rate")
+    plt.title("Win Rate")
+    plt.legend()
+
+    plt.tight_layout()
+    plt.savefig(PLOT_FILE)
+    print(f"Saved metrics plot to {PLOT_FILE}")
 
 if __name__ == "__main__":
     main()

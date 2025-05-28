@@ -147,7 +147,7 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
     Minimax agent with alpha-beta pruning
     """
 
-    def __init__(self, evalFn = 'scoreEvaluationFunction', depth = '3'):
+    def __init__(self, evalFn = 'scoreEvaluationFunction', depth = '4'):
         super().__init__(evalFn, depth)
 
     def getAction(self, gameState: GameState):
@@ -263,7 +263,7 @@ class NeuralAgent(Agent):
     Un agente de Pacman que utiliza una red neuronal para tomar decisiones
     basado en la evaluación del estado del juego.
     """
-    def __init__(self, model_path="models/pacman_model.pth"):
+    def __init__(self, model_path="models/pacman_dqn.pth"):
         super().__init__()
         self.model = None
         self.input_size = None
@@ -492,11 +492,12 @@ class AlphaBetaNeuralAgent(MultiAgentSearchAgent):
     Minimax agent with alpha-beta pruning and optional neural network evaluation
     """
 
-    def __init__(self, evalFn = 'scoreEvaluationFunction', depth = '3', model_path="models/pacman_model.pth"):
+    def __init__(self, evalFn = 'scoreEvaluationFunction', depth = '3', model_path="models/pacman_dqn.pth", net_mode="mean"):
         super().__init__(evalFn, depth)
         self.model = None
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.use_neural = model_path is not None
+        self.net_mode = net_mode  # "mean", "max", or "sum"
         if self.use_neural:
             self.load_model(model_path)
 
@@ -558,23 +559,37 @@ class AlphaBetaNeuralAgent(MultiAgentSearchAgent):
 
     def neural_evaluation(self, state):
         """
-        Evalúa el estado utilizando la red neuronal, si está disponible.
+        Evaluate the state using the neural network as a Q-function.
+        Use max Q(s, a) over legal actions as V(s).
+        Optionally, combine with heuristic evaluation.
         """
         if self.model is None:
-            return 0  # Si no hay modelo, devolver 0
-        
-        # Convertir a matriz
+            return 0
         state_matrix = self.state_to_matrix(state)
-        
-        # Convertir a tensor
         state_tensor = torch.FloatTensor(state_matrix).unsqueeze(0).to(self.device)
-        
-        # Obtener predicciones
         with torch.no_grad():
-            output = self.model(state_tensor)
-            score = output.max().item()  # O usar output.mean().item() o un mapeo personalizado
-            
-        return score
+            q_values = self.model(state_tensor).cpu().numpy()[0]
+        legal_actions = state.getLegalActions()
+        action_to_idx = {
+            'Stop': 0,
+            'North': 1,
+            'South': 2,
+            'East': 3,
+            'West': 4
+        }
+        legal_indices = [action_to_idx[a] for a in legal_actions if a in action_to_idx]
+        if not legal_indices:
+            return 0
+        # Добавим штраф для действия "Stop"
+        q_values = q_values.copy()
+        if 'Stop' in legal_actions:
+            q_values[action_to_idx['Stop']] -= 20  # Штраф за бездействие
+        v_q = max(q_values[idx] for idx in legal_indices)
+        # Можно добавить смешивание с эвристикой:
+        # alpha = 0.7
+        # v_heur = self.evaluationFunction(state)
+        # return alpha * v_q + (1 - alpha) * v_heur
+        return v_q
 
     def getAction(self, gameState: GameState):
         """
@@ -582,7 +597,7 @@ class AlphaBetaNeuralAgent(MultiAgentSearchAgent):
         using a neural network at the leaves if available.
         """
         def alphabeta(agentIndex, depth, gameState, alpha, beta):
-            # Base case: Check if the game is over or if we've reached the maximum depth
+            # Base case: Check if the game is a winning or losing state
             if gameState.isWin() or gameState.isLose() or depth == self.depth:
                 if self.use_neural:
                     return self.neural_evaluation(gameState)

@@ -1,0 +1,7 @@
+Reply mode: False
+Pacman died! Score: 62
+Datos del juego 459 guardados en pacman_data/game_459.csv
+Average Score: 62.0
+Scores:        62.0
+Win Rate:      0/1 (0.00)
+Record:        Loss

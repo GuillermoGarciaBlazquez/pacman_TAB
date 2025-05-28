@@ -1,7 +1,7 @@
 Reply mode: False
-Pacman emerges victorious! Score: 1790
-Datos del juego 143 guardados en pacman_data/game_143.csv
-Average Score: 1790.0
-Scores:        1790.0
-Win Rate:      1/1 (1.00)
-Record:        Win
+Pacman died! Score: 55
+Datos del juego 227 guardados en pacman_data/game_227.csv
+Average Score: 55.0
+Scores:        55.0
+Win Rate:      0/1 (0.00)
+Record:        Loss

@@ -260,8 +260,8 @@ better = betterEvaluationFunction
 
 class NeuralAgent(Agent):
     """
-    Un agente de Pacman que utiliza una red neuronal para tomar decisiones
-    basado en la evaluación del estado del juego.
+    A Pacman agent that uses a neural network to make decisions
+    based on the evaluation of the game state.
     """
     def __init__(self, model_path="models/pacman_dqn.pth"):
         super().__init__()
@@ -270,7 +270,7 @@ class NeuralAgent(Agent):
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.load_model(model_path)
         
-        # Mapeo de índices a acciones
+        # Mapping from indices to actions
         self.idx_to_action = {
             0: Directions.STOP,
             1: Directions.NORTH,
@@ -279,130 +279,130 @@ class NeuralAgent(Agent):
             4: Directions.WEST
         }
         
-        # Para evaluar alternativas
+        # For evaluating alternatives
         self.action_to_idx = {v: k for k, v in self.idx_to_action.items()}
         
-        # Contador de movimientos
+        # Move counter
         self.move_count = 0
         
-        print(f"NeuralAgent inicializado, usando dispositivo: {self.device}")
+        print(f"NeuralAgent initialized, using device: {self.device}")
 
     def load_model(self, model_path):
-        """Carga el modelo desde el archivo guardado"""
+        """Loads the model from the saved file"""
         try:
             if not os.path.exists(model_path):
-                print(f"ERROR: No se encontró el modelo en {model_path}")
+                print(f"ERROR: Model not found at {model_path}")
                 return False
                 
-            # Cargar el modelo
+            # Load the model
             checkpoint = torch.load(model_path, map_location=self.device)
             self.input_size = checkpoint['input_size']
             
-            # Crear y cargar el modelo
+            # Create and load the model
             self.model = PacmanNet(self.input_size, 128, 5).to(self.device)
             self.model.load_state_dict(checkpoint['model_state_dict'])
-            self.model.eval()  # Modo evaluación
+            self.model.eval()  # Evaluation mode
             
-            print(f"Modelo cargado correctamente desde {model_path}")
-            print(f"Tamaño de entrada: {self.input_size}")
+            print(f"Model loaded successfully from {model_path}")
+            print(f"Input size: {self.input_size}")
             return True
         except Exception as e:
-            print(f"Error al cargar el modelo: {e}")
+            print(f"Error loading model: {e}")
             return False
 
     def state_to_matrix(self, state):
-        """Convierte el estado del juego en una matriz numérica normalizada"""
-        # Obtener dimensiones del tablero
+        """Converts the game state into a normalized numeric matrix"""
+        # Get board dimensions
         walls = state.getWalls()
         width, height = walls.width, walls.height
         
-        # Crear una matriz numérica
-        # 0: pared, 1: espacio vacío, 2: comida, 3: cápsula, 4: fantasma, 5: Pacman
+        # Create a numeric matrix
+        # 0: wall, 1: empty space, 2: food, 3: capsule, 4: ghost, 5: Pacman
         numeric_map = np.zeros((width, height), dtype=np.float32)
         
-        # Establecer espacios vacíos (todo lo que no es pared comienza como espacio vacío)
+        # Set empty spaces (everything that's not a wall starts as empty)
         for x in range(width):
             for y in range(height):
                 if not walls[x][y]:
                     numeric_map[x][y] = 1
         
-        # Agregar comida
+        # Add food
         food = state.getFood()
         for x in range(width):
             for y in range(height):
                 if food[x][y]:
                     numeric_map[x][y] = 2
         
-        # Agregar cápsulas
+        # Add capsules
         for x, y in state.getCapsules():
             numeric_map[x][y] = 3
         
-        # Agregar fantasmas
+        # Add ghosts
         for ghost_state in state.getGhostStates():
             ghost_x, ghost_y = int(ghost_state.getPosition()[0]), int(ghost_state.getPosition()[1])
-            # Si el fantasma está asustado, marcarlo diferente
+            # If the ghost is scared, mark it differently
             if ghost_state.scaredTimer > 0:
-                numeric_map[ghost_x][ghost_y] = 6  # Fantasma asustado
+                numeric_map[ghost_x][ghost_y] = 6  # Scared ghost
             else:
-                numeric_map[ghost_x][ghost_y] = 4  # Fantasma normal
+                numeric_map[ghost_x][ghost_y] = 4  # Normal ghost
         
-        # Agregar Pacman
+        # Add Pacman
         pacman_x, pacman_y = state.getPacmanPosition()
         numeric_map[int(pacman_x)][int(pacman_y)] = 5
         
-        # Normalizar
+        # Normalize
         numeric_map = numeric_map / 6.0
         
         return numeric_map
 
     def evaluationFunction(self, state):
         """
-        Una función de evaluación basada en la red neuronal y en heurísticas adicionales.
+        An evaluation function based on the neural network and additional heuristics.
         """
         if self.model is None:
-            return 0  # Si no hay modelo, devolver 0
+            return 0  # If no model, return 0
         
-        # Convertir a matriz
+        # Convert to matrix
         state_matrix = self.state_to_matrix(state)
         
-        # Convertir a tensor
+        # Convert to tensor
         state_tensor = torch.FloatTensor(state_matrix).unsqueeze(0).to(self.device)
         
-        # Obtener predicciones
+        # Get predictions
         with torch.no_grad():
             output = self.model(state_tensor)
             probabilities = torch.nn.functional.softmax(output, dim=1).cpu().numpy()[0]
         
-        # Obtener acciones legales
+        # Get legal actions
         legal_actions = state.getLegalActions()
         
-        # Aplicar heurísticas adicionales, similar a betterEvaluationFunction
+        # Apply additional heuristics, similar to betterEvaluationFunction
         score = state.getScore()
         
-        # Mejorar la evaluación con conocimiento del dominio
+        # Improve evaluation with domain knowledge
         pacman_pos = state.getPacmanPosition()
         food = state.getFood().asList()
         ghost_states = state.getGhostStates()
         
-        # Factor 1: Distancia a la comida más cercana
+        # Factor 1: Distance to the nearest food
         if food:
             min_food_distance = min(manhattanDistance(pacman_pos, food_pos) for food_pos in food)
             score += 1.0 / (min_food_distance + 1)
         
-        # Factor 2: Proximidad a fantasmas
+        # Factor 2: Proximity to ghosts
         for ghost_state in ghost_states:
             ghost_pos = ghost_state.getPosition()
             ghost_distance = manhattanDistance(pacman_pos, ghost_pos)
             
             if ghost_state.scaredTimer > 0:
-                # Si el fantasma está asustado, acercarse a él
+                # If the ghost is scared, approach it
                 score += 50 / (ghost_distance + 1)
             else:
-                # Si no está asustado, evitarlo
+                # If not scared, avoid it
                 if ghost_distance <= 2:
-                    score -= 200  # Gran penalización por estar demasiado cerca
+                    score -= 200  # Large penalty for being too close
         
-        # Combinar la puntuación de la red con la heurística
+        # Combine the neural network score with the heuristic
         neural_score = 0
         for i, action in enumerate(self.idx_to_action.values()):
             if action in legal_actions:
@@ -412,22 +412,22 @@ class NeuralAgent(Agent):
 
     def getAction(self, state):
         """
-        Devuelve la mejor acción basada en la evaluación de la red neuronal
-        y heurísticas adicionales.
+        Returns the best action based on the neural network evaluation
+        and additional heuristics.
         """
         self.move_count += 1
         
-        # Si no hay modelo, hacer un movimiento aleatorio
+        # If no model, make a random move
         if self.model is None:
-            print("ERROR: Modelo no cargado. Haciendo movimiento aleatorio.")
+            print("ERROR: Model not loaded. Making random move.")
             exit()
             legal_actions = state.getLegalActions()
             return random.choice(legal_actions)
         
-        # Obtener acciones legales
+        # Get legal actions
         legal_actions = state.getLegalActions()
         
-        # Evaluación directa con la red neuronal
+        # Direct evaluation with the neural network
         state_matrix = self.state_to_matrix(state)
         state_tensor = torch.FloatTensor(state_matrix).unsqueeze(0).to(self.device)
         
@@ -435,25 +435,25 @@ class NeuralAgent(Agent):
             output = self.model(state_tensor)
             probabilities = torch.nn.functional.softmax(output, dim=1).cpu().numpy()[0]
         
-        # Mapear índices del modelo a acciones del juego
+        # Map model indices to game actions
         action_probs = []
         for idx, prob in enumerate(probabilities):
             action = self.idx_to_action[idx]
             if action in legal_actions:
                 action_probs.append((action, prob))
         
-        # Ordenar por probabilidad (mayor a menor)
+        # Sort by probability (descending)
         action_probs.sort(key=lambda x: x[1], reverse=True)
         
-        # Exploración: con una probabilidad decreciente, elegir aleatoriamente
-        exploration_rate = 0.2 * (0.99 ** self.move_count)  # Disminuye con el tiempo
+        # Exploration: with a decreasing probability, choose randomly
+        exploration_rate = 0.2 * (0.99 ** self.move_count)  # Decreases over time
         if random.random() < exploration_rate:
-            # Excluir STOP si es posible
+            # Exclude STOP if possible
             if len(legal_actions) > 1 and Directions.STOP in legal_actions:
                 legal_actions.remove(Directions.STOP)
             return random.choice(legal_actions)
         
-        # Evaluación alternativa: generar sucesores y evaluar cada uno
+        # Alternative evaluation: generate successors and evaluate each
         successors = []
         for action in legal_actions:
             successor = state.generateSuccessor(0, action)
@@ -463,214 +463,165 @@ class NeuralAgent(Agent):
                 if a == action:
                     neural_score = p * 100
                     break
-            # Combinar evaluación heurística con la predicción de la red
+            # Combine heuristic evaluation with the network prediction
             combined_score = eval_score + neural_score
             
-            # Penalizar STOP a menos que sea la única opción
+            # Penalize STOP unless it's the only option
             if action == Directions.STOP and len(legal_actions) > 1:
                 combined_score -= 50
                 
             successors.append((action, combined_score))
         
-        # Ordenar por puntuación combinada
+        # Sort by combined score
         successors.sort(key=lambda x: x[1], reverse=True)
         
-        # Devolver la mejor acción
+        # Return the best action
         return successors[0][0]
 
-# Definir una función para crear el agente
+# Define a function to create the agent
 def createNeuralAgent(model_path="models/pacman_model.pth"):
     """
-    Función de fábrica para crear un agente neuronal.
-    Útil para integrarse con la estructura de pacman.py.
+    Factory function to create a neural agent.
+    Useful for integration with pacman.py structure.
     """
     return NeuralAgent(model_path)
 
-
-class AlphaBetaNeuralAgent(MultiAgentSearchAgent):
+class AlphaBetaNeuralAgent(Agent):
     """
-    Minimax agent with alpha-beta pruning and optional neural network evaluation
+    Pacman agent using alpha-beta pruning and a value network to evaluate states.
     """
-
-    def __init__(self, evalFn = 'scoreEvaluationFunction', depth = '3', model_path="models/pacman_dqn.pth", net_mode="mean"):
-        super().__init__(evalFn, depth)
+    def __init__(self, model_path="models/pacman_value.pth", depth=3):
+        super().__init__()
         self.model = None
+        self.input_size = None
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-        self.use_neural = model_path is not None
-        self.net_mode = net_mode  # "mean", "max", or "sum"
-        if self.use_neural:
-            self.load_model(model_path)
+        self.depth = depth
+        self.load_model(model_path)
+        print(f"AlphaBetaNeuralAgent initialized, device: {self.device}, depth: {self.depth}")
 
     def load_model(self, model_path):
-        if not os.path.exists(model_path):
-            print(f"Neural model not found at {model_path}")
-            self.use_neural = False
-            return
-        checkpoint = torch.load(model_path, map_location=self.device)
-        input_size = checkpoint['input_size']
-        self.model = PacmanNet(input_size, 128, 5).to(self.device)
-        self.model.load_state_dict(checkpoint['model_state_dict'])
-        self.model.eval()
+        try:
+            if not os.path.exists(model_path):
+                print(f"ERROR: Value model not found at {model_path}")
+                return False
+            checkpoint = torch.load(model_path, map_location=self.device)
+            self.input_size = checkpoint['input_size']
+            # ValueNet: input_shape, hidden_size
+            from net_state_dqn import StateValueNet
+            self.model = StateValueNet(self.input_size, 128).to(self.device)
+            self.model.load_state_dict(checkpoint['model_state_dict'])
+            self.model.eval()
+            print(f"Value model loaded from {model_path}")
+            return True
+        except Exception as e:
+            print(f"Error loading value model: {e}")
+            return False
 
     def state_to_matrix(self, state):
-        """Convierte el estado del juego en una matriz numérica normalizada"""
-        # Obtener dimensiones del tablero
+        """Converts the game state into a normalized numeric matrix"""
+        # Get board dimensions
         walls = state.getWalls()
         width, height = walls.width, walls.height
         
-        # Crear una matriz numérica
-        # 0: pared, 1: espacio vacío, 2: comida, 3: cápsula, 4: fantasma, 5: Pacman
+        # Create a numeric matrix
+        # 0: wall, 1: empty space, 2: food, 3: capsule, 4: ghost, 5: Pacman
         numeric_map = np.zeros((width, height), dtype=np.float32)
         
-        # Establecer espacios vacíos (todo lo que no es pared comienza como espacio vacío)
+        # Set empty spaces (everything that's not a wall starts as empty)
         for x in range(width):
             for y in range(height):
                 if not walls[x][y]:
                     numeric_map[x][y] = 1
         
-        # Agregar comida
+        # Add food
         food = state.getFood()
         for x in range(width):
             for y in range(height):
                 if food[x][y]:
                     numeric_map[x][y] = 2
         
-        # Agregar cápsulas
+        # Add capsules
         for x, y in state.getCapsules():
             numeric_map[x][y] = 3
         
-        # Agregar fantasmas
+        # Add ghosts
         for ghost_state in state.getGhostStates():
             ghost_x, ghost_y = int(ghost_state.getPosition()[0]), int(ghost_state.getPosition()[1])
-            # Si el fantasma está asustado, marcarlo diferente
+            # If the ghost is scared, mark it differently
             if ghost_state.scaredTimer > 0:
-                numeric_map[ghost_x][ghost_y] = 6  # Fantasma asustado
+                numeric_map[ghost_x][ghost_y] = 6  # Scared ghost
             else:
-                numeric_map[ghost_x][ghost_y] = 4  # Fantasma normal
+                numeric_map[ghost_x][ghost_y] = 4  # Normal ghost
         
-        # Agregar Pacman
+        # Add Pacman
         pacman_x, pacman_y = state.getPacmanPosition()
         numeric_map[int(pacman_x)][int(pacman_y)] = 5
         
-        # Normalizar
+        # Normalize
         numeric_map = numeric_map / 6.0
         
         return numeric_map
 
-    def neural_evaluation(self, state):
-        """
-        Evaluate the state using the neural network as a Q-function.
-        Use max Q(s, a) over legal actions as V(s).
-        Optionally, combine with heuristic evaluation.
-        """
+    def value_evaluate(self, state):
         if self.model is None:
             return 0
         state_matrix = self.state_to_matrix(state)
         state_tensor = torch.FloatTensor(state_matrix).unsqueeze(0).to(self.device)
         with torch.no_grad():
-            q_values = self.model(state_tensor).cpu().numpy()[0]
-        legal_actions = state.getLegalActions()
-        action_to_idx = {
-            'Stop': 0,
-            'North': 1,
-            'South': 2,
-            'East': 3,
-            'West': 4
-        }
-        legal_indices = [action_to_idx[a] for a in legal_actions if a in action_to_idx]
-        if not legal_indices:
-            return 0
-        # Добавим штраф для действия "Stop"
-        q_values = q_values.copy()
-        if 'Stop' in legal_actions:
-            q_values[action_to_idx['Stop']] -= 20  # Штраф за бездействие
-        v_q = max(q_values[idx] for idx in legal_indices)
-        # Можно добавить смешивание с эвристикой:
-        # alpha = 0.7
-        # v_heur = self.evaluationFunction(state)
-        # return alpha * v_q + (1 - alpha) * v_heur
-        return v_q
+            value = self.model(state_tensor).cpu().item()
+        return value
 
-    def getAction(self, gameState: GameState):
+    def getAction(self, state):
         """
-        Returns the alpha-beta action using self.depth and self.evaluationFunction,
-        using a neural network at the leaves if available.
+        Alpha-beta pruning with a value network for state evaluation.
         """
         def alphabeta(agentIndex, depth, gameState, alpha, beta):
-            # Base case: Check if the game is a winning or losing state
             if gameState.isWin() or gameState.isLose() or depth == self.depth:
-                if self.use_neural:
-                    return self.neural_evaluation(gameState)
-                else:
-                    return self.evaluationFunction(gameState)
-
-            # Pacman (maximizer) is agentIndex 0
-            if agentIndex == 0:
-                return maxValue(agentIndex, depth, gameState, alpha, beta)
-            # Ghosts (minimizer) are agentIndex 1 or higher
-            else:
-                return minValue(agentIndex, depth, gameState, alpha, beta)
-
-        def maxValue(agentIndex, depth, gameState, alpha, beta):
-            # Initialize max value
-            v = float('-inf')
-            # Get Pacman's legal actions
+                return self.value_evaluate(gameState)
+            num_agents = gameState.getNumAgents()
             legalActions = gameState.getLegalActions(agentIndex)
-
             if not legalActions:
-                if self.use_neural:
-                    return self.neural_evaluation(gameState)
-                else:
-                    return self.evaluationFunction(gameState)
+                return self.value_evaluate(gameState)
+            if agentIndex == 0:  # Pacman (max)
+                v = float('-inf')
+                for action in legalActions:
+                    successor = gameState.generateSuccessor(agentIndex, action)
+                    v = max(v, alphabeta(1, depth, successor, alpha, beta))
+                    if v > beta:
+                        return v
+                    alpha = max(alpha, v)
+                return v
+            else:  # Ghosts (min)
+                v = float('inf')
+                nextAgent = agentIndex + 1
+                nextDepth = depth
+                if nextAgent == num_agents:
+                    nextAgent = 0
+                    nextDepth += 1
+                for action in legalActions:
+                    successor = gameState.generateSuccessor(agentIndex, action)
+                    v = min(v, alphabeta(nextAgent, nextDepth, successor, alpha, beta))
+                    if v < alpha:
+                        return v
+                    beta = min(beta, v)
+                return v
 
-            # Iterate through all possible actions and update alpha-beta values
-            for action in legalActions:
-                successor = gameState.generateSuccessor(agentIndex, action)
-                v = max(v, alphabeta(1, depth, successor, alpha, beta))  # Ghosts start at index 1
-                if v > beta:
-                    return v  # Prune the remaining branches
-                alpha = max(alpha, v)
-            return v
-
-        def minValue(agentIndex, depth, gameState, alpha, beta):
-            # Initialize min value
-            v = float('inf')
-            # Get the current agent's legal actions (ghosts)
-            legalActions = gameState.getLegalActions(agentIndex)
-
-            if not legalActions:
-                if self.use_neural:
-                    return self.neural_evaluation(gameState)
-                else:
-                    return self.evaluationFunction(gameState)
-
-            # Get the next agent's index and check if we need to increase depth
-            nextAgent = agentIndex + 1
-            if nextAgent == gameState.getNumAgents():
-                nextAgent = 0  # Go back to Pacman
-                depth += 1  # Increase the depth since we've gone through all agents
-
-            # Iterate through all possible actions and update alpha-beta values
-            for action in legalActions:
-                successor = gameState.generateSuccessor(agentIndex, action)
-                v = min(v, alphabeta(nextAgent, depth, successor, alpha, beta))
-                if v < alpha:
-                    return v  # Prune the remaining branches
-                beta = min(beta, v)
-            return v
-
-        # Pacman (agentIndex 0) will choose the action with the best alpha-beta score
         bestAction = None
         bestScore = float('-inf')
         alpha = float('-inf')
         beta = float('inf')
-
-        for action in gameState.getLegalActions(0):  # Pacman's legal actions
-            successor = gameState.generateSuccessor(0, action)
-            score = alphabeta(1, 0, successor, alpha, beta)  # Start with Ghost 1, depth 0
+        for action in state.getLegalActions(0):
+            successor = state.generateSuccessor(0, action)
+            score = alphabeta(1, 0, successor, alpha, beta)
             if score > bestScore:
                 bestScore = score
                 bestAction = action
             alpha = max(alpha, score)
-
         return bestAction
+
+# Define a function to create the agent
+def createAlphaBetaNeuralAgent(model_path="models/pacman_value.pth", depth=3):
+    """
+    Factory to create AlphaBetaNeuralAgent.
+    """
+    return AlphaBetaNeuralAgent(model_path, depth)

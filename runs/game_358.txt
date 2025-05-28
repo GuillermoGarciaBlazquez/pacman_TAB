@@ -1,7 +1,0 @@
-Reply mode: False
-Pacman emerges victorious! Score: 2019
-Datos del juego 564 guardados en pacman_data/game_564.csv
-Average Score: 2019.0
-Scores:        2019.0
-Win Rate:      1/1 (1.00)
-Record:        Win

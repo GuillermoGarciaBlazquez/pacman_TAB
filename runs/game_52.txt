@@ -1,7 +1,0 @@
-Reply mode: False
-Pacman emerges victorious! Score: 2023
-Datos del juego 258 guardados en pacman_data/game_258.csv
-Average Score: 2023.0
-Scores:        2023.0
-Win Rate:      1/1 (1.00)
-Record:        Win

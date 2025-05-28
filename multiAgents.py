@@ -490,7 +490,7 @@ class AlphaBetaNeuralAgent(Agent):
     """
     Pacman agent using alpha-beta pruning and a value network to evaluate states.
     """
-    def __init__(self, model_path="models/pacman_value.pth", depth=3):
+    def __init__(self, model_path="models/pacman_value_v1.0_finetuned.pth", depth=3):
         super().__init__()
         self.model = None
         self.input_size = None

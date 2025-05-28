@@ -1,7 +1,0 @@
-Reply mode: False
-Pacman died! Score: 561
-Datos del juego 501 guardados en pacman_data/game_501.csv
-Average Score: 561.0
-Scores:        561.0
-Win Rate:      0/1 (0.00)
-Record:        Loss

@@ -1,7 +1,0 @@
-Reply mode: False
-Pacman emerges victorious! Score: 2022
-Datos del juego 547 guardados en pacman_data/game_547.csv
-Average Score: 2022.0
-Scores:        2022.0
-Win Rate:      1/1 (1.00)
-Record:        Win

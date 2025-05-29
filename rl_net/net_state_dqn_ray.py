@@ -186,7 +186,7 @@ class EnvWorker:
         try:
             import numpy as np
             import torch
-            from pacman_gym_env import PacmanGymEnv
+            from rl_net.pacman_gym_env import PacmanGymEnv
         except ImportError as e:
             print(f"[EnvWorker] ImportError: {e}. Make sure all dependencies are installed in the Ray worker environment.")
             raise
@@ -249,7 +249,7 @@ class EnvWorker:
 def main():
     import time
     start_time = time.time()
-    from pacman_gym_env import PacmanGymEnv
+    from rl_net.pacman_gym_env import PacmanGymEnv
     env = PacmanGymEnv()
     input_shape = env.observation_space.shape
 
@@ -369,17 +369,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# Рекомендации для ускорения обучения и устранения "медленного старта":
-
-# 1. Убедитесь, что Ray не пишет временные файлы на диск, который почти заполнен.
-#    В логах видно: "is over 95% full, available space: 0.328773 GB".
-#    => Очистите /tmp или увеличьте свободное место на диске.
-
-# 2. Можно уменьшить количество воркеров Ray, если ваша машина не справляется с параллелизмом:
-# num_workers = 2  # вместо 4
-
-# 3. Проверьте, не перегружена ли ваша система (CPU, RAM, диск).
-
-# 4. Для отладки скорости можно добавить замер времени на одну итерацию:
-import time

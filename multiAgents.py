@@ -513,7 +513,7 @@ class AlphaBetaNeuralAgent(Agent):
             checkpoint = torch.load(model_path, map_location=self.device)
             self.input_size = checkpoint['input_size']
             # ValueNet: input_shape, hidden_size
-            from net_state_dqn import StateValueNet
+            from rl_net.net_state_dqn import StateValueNet
             self.model = StateValueNet(self.input_size, 128).to(self.device)
             self.model.load_state_dict(checkpoint['model_state_dict'])
             self.model.eval()

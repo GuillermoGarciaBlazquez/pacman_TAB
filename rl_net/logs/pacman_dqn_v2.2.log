@@ -30322,3 +30322,750 @@ Episode 29278/30000 | Total reward: 320.00 | Avg loss: 1.6007 | Epsilon: 0.010 |
 Episode 29279/30000 | Total reward: 320.00 | Avg loss: 1.7039 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
 Episode 29280/30000 | Total reward: 320.00 | Avg loss: 1.6011 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
 Episode 29281/30000 | Total reward: 527.00 | Avg loss: 1.6382 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29282/30000 | Total reward: 320.00 | Avg loss: 1.5759 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29283/30000 | Total reward: 163.80 | Avg loss: 1.4262 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29284/30000 | Total reward: 563.40 | Avg loss: 1.9302 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29285/30000 | Total reward: 320.00 | Avg loss: 1.6913 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29286/30000 | Total reward: 543.40 | Avg loss: 1.4804 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29287/30000 | Total reward: 320.00 | Avg loss: 1.5975 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29288/30000 | Total reward: 320.00 | Avg loss: 1.6024 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29289/30000 | Total reward: 320.00 | Avg loss: 1.5687 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29290/30000 | Total reward: 235.70 | Avg loss: 1.5044 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29291/30000 | Total reward: 63.70 | Avg loss: 1.1504 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29292/30000 | Total reward: 320.00 | Avg loss: 1.5992 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29293/30000 | Total reward: 678.10 | Avg loss: 1.5012 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29294/30000 | Total reward: 320.00 | Avg loss: 1.7455 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29295/30000 | Total reward: 320.00 | Avg loss: 1.7456 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29296/30000 | Total reward: 285.80 | Avg loss: 1.7523 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29297/30000 | Total reward: 320.00 | Avg loss: 1.7507 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29298/30000 | Total reward: 320.00 | Avg loss: 1.8032 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29299/30000 | Total reward: 320.00 | Avg loss: 1.7481 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29300/30000 | Total reward: 320.00 | Avg loss: 1.7199 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+--- Last 100 episodes ---
+Avg reward: 377.57 | Avg loss: 2.6962 | Win rate: 0.0% | Lose rate: 46.0%
+-------------------------
+Episode 29301/30000 | Total reward: 235.70 | Avg loss: 1.4991 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29302/30000 | Total reward: 320.00 | Avg loss: 1.7657 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29303/30000 | Total reward: 448.70 | Avg loss: 1.4650 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29304/30000 | Total reward: 320.00 | Avg loss: 1.6798 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29305/30000 | Total reward: 320.00 | Avg loss: 1.7819 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29306/30000 | Total reward: 320.00 | Avg loss: 1.9021 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29307/30000 | Total reward: 320.00 | Avg loss: 1.6835 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29308/30000 | Total reward: 320.00 | Avg loss: 1.6380 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29309/30000 | Total reward: 320.00 | Avg loss: 1.8239 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29310/30000 | Total reward: 320.00 | Avg loss: 1.7633 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29311/30000 | Total reward: 63.70 | Avg loss: 2.2755 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29312/30000 | Total reward: 403.20 | Avg loss: 2.2917 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29313/30000 | Total reward: 477.50 | Avg loss: 1.9891 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29314/30000 | Total reward: 320.00 | Avg loss: 1.8711 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29315/30000 | Total reward: 320.00 | Avg loss: 1.6491 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29316/30000 | Total reward: 668.30 | Avg loss: 61.8987 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29317/30000 | Total reward: 600.80 | Avg loss: 2.1995 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29318/30000 | Total reward: 320.00 | Avg loss: 2.1041 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29319/30000 | Total reward: 320.00 | Avg loss: 1.7418 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29320/30000 | Total reward: 595.30 | Avg loss: 1.7182 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29321/30000 | Total reward: 563.40 | Avg loss: 1.7719 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29322/30000 | Total reward: 320.00 | Avg loss: 1.5666 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29323/30000 | Total reward: 520.60 | Avg loss: 1.6565 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29324/30000 | Total reward: 320.00 | Avg loss: 1.6884 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29325/30000 | Total reward: 320.00 | Avg loss: 1.7348 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29326/30000 | Total reward: 516.10 | Avg loss: 1.8474 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29327/30000 | Total reward: 320.00 | Avg loss: 1.9148 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29328/30000 | Total reward: 320.00 | Avg loss: 1.6934 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29329/30000 | Total reward: 320.00 | Avg loss: 1.7694 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29330/30000 | Total reward: 263.00 | Avg loss: 2.3946 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29331/30000 | Total reward: 662.60 | Avg loss: 1.7495 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29332/30000 | Total reward: 320.00 | Avg loss: 1.9802 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29333/30000 | Total reward: 320.00 | Avg loss: 1.9936 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29334/30000 | Total reward: 163.80 | Avg loss: 1.5806 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29335/30000 | Total reward: 685.40 | Avg loss: 1.7443 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29336/30000 | Total reward: 517.00 | Avg loss: 1.5401 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29337/30000 | Total reward: 36.40 | Avg loss: 1.5263 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29338/30000 | Total reward: 624.70 | Avg loss: 1.8398 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29339/30000 | Total reward: 320.00 | Avg loss: 1.8391 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29340/30000 | Total reward: 320.00 | Avg loss: 1.8004 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29341/30000 | Total reward: 320.00 | Avg loss: 1.6939 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29342/30000 | Total reward: 320.00 | Avg loss: 1.7133 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29343/30000 | Total reward: 403.20 | Avg loss: 1.8416 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29344/30000 | Total reward: 439.60 | Avg loss: 1.4565 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29345/30000 | Total reward: 330.00 | Avg loss: 1.6569 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29346/30000 | Total reward: 320.00 | Avg loss: 1.7391 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29347/30000 | Total reward: 320.00 | Avg loss: 1.9816 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29348/30000 | Total reward: 320.00 | Avg loss: 1.8841 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29349/30000 | Total reward: 320.00 | Avg loss: 1.7224 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29350/30000 | Total reward: 320.00 | Avg loss: 1.7999 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29351/30000 | Total reward: 320.00 | Avg loss: 1.6965 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29352/30000 | Total reward: 320.00 | Avg loss: 1.7588 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29353/30000 | Total reward: 493.30 | Avg loss: 1.5498 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29354/30000 | Total reward: 572.50 | Avg loss: 2.0413 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29355/30000 | Total reward: 385.00 | Avg loss: 1.7188 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29356/30000 | Total reward: 668.10 | Avg loss: 1.6506 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29357/30000 | Total reward: 320.00 | Avg loss: 1.7658 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29358/30000 | Total reward: 320.00 | Avg loss: 1.8458 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29359/30000 | Total reward: 320.00 | Avg loss: 2.0382 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29360/30000 | Total reward: 320.00 | Avg loss: 1.6840 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29361/30000 | Total reward: 589.80 | Avg loss: 1.5457 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29362/30000 | Total reward: 127.40 | Avg loss: 4.4231 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29363/30000 | Total reward: 320.00 | Avg loss: 2.1430 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29364/30000 | Total reward: 320.00 | Avg loss: 1.8473 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29365/30000 | Total reward: 686.30 | Avg loss: 1.5895 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29366/30000 | Total reward: 320.00 | Avg loss: 1.8570 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29367/30000 | Total reward: 320.00 | Avg loss: 2.0448 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29368/30000 | Total reward: 320.00 | Avg loss: 1.8252 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29369/30000 | Total reward: 320.00 | Avg loss: 1.8490 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29370/30000 | Total reward: 662.60 | Avg loss: 1.7342 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29371/30000 | Total reward: 320.00 | Avg loss: 1.7596 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29372/30000 | Total reward: 320.00 | Avg loss: 2.0300 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29373/30000 | Total reward: 320.00 | Avg loss: 1.7168 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29374/30000 | Total reward: 54.60 | Avg loss: 1.7314 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29375/30000 | Total reward: 681.80 | Avg loss: 1.5766 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29376/30000 | Total reward: 320.00 | Avg loss: 1.5894 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29377/30000 | Total reward: 320.00 | Avg loss: 1.5843 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29378/30000 | Total reward: 320.00 | Avg loss: 1.6166 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29379/30000 | Total reward: 320.00 | Avg loss: 1.5498 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29380/30000 | Total reward: 320.00 | Avg loss: 1.5069 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29381/30000 | Total reward: 320.00 | Avg loss: 1.4938 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29382/30000 | Total reward: 457.80 | Avg loss: 1.4689 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29383/30000 | Total reward: 320.00 | Avg loss: 1.5809 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29384/30000 | Total reward: 339.50 | Avg loss: 1.6616 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29385/30000 | Total reward: 320.00 | Avg loss: 1.9509 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29386/30000 | Total reward: 355.90 | Avg loss: 2.0034 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29387/30000 | Total reward: 320.00 | Avg loss: 1.8620 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29388/30000 | Total reward: 320.00 | Avg loss: 1.6014 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29389/30000 | Total reward: 320.00 | Avg loss: 2.0608 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29390/30000 | Total reward: 320.00 | Avg loss: 1.8388 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29391/30000 | Total reward: 320.00 | Avg loss: 1.5101 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29392/30000 | Total reward: 320.00 | Avg loss: 1.5405 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29393/30000 | Total reward: 330.00 | Avg loss: 2.1185 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29394/30000 | Total reward: 294.00 | Avg loss: 2.2812 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29395/30000 | Total reward: 320.00 | Avg loss: 1.8060 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29396/30000 | Total reward: 320.00 | Avg loss: 1.6106 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29397/30000 | Total reward: 520.40 | Avg loss: 1.6621 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29398/30000 | Total reward: 320.00 | Avg loss: 1.6144 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29399/30000 | Total reward: 484.20 | Avg loss: 1.7829 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29400/30000 | Total reward: 690.90 | Avg loss: 1.6140 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+--- Last 100 episodes ---
+Avg reward: 371.33 | Avg loss: 2.4019 | Win rate: 0.0% | Lose rate: 37.0%
+-------------------------
+Episode 29401/30000 | Total reward: 320.00 | Avg loss: 1.7990 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29402/30000 | Total reward: 320.40 | Avg loss: 3.0707 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29403/30000 | Total reward: 330.00 | Avg loss: 2.1386 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29404/30000 | Total reward: 91.00 | Avg loss: 2.0046 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29405/30000 | Total reward: 320.00 | Avg loss: 1.7736 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29406/30000 | Total reward: 320.00 | Avg loss: 1.8315 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29407/30000 | Total reward: 320.00 | Avg loss: 1.6496 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29408/30000 | Total reward: 320.00 | Avg loss: 1.5034 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29409/30000 | Total reward: 320.00 | Avg loss: 1.7946 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29410/30000 | Total reward: 320.00 | Avg loss: 1.7324 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29411/30000 | Total reward: 320.00 | Avg loss: 2.2819 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29412/30000 | Total reward: 320.00 | Avg loss: 1.8114 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29413/30000 | Total reward: 320.00 | Avg loss: 1.9872 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29414/30000 | Total reward: 320.00 | Avg loss: 1.8487 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29415/30000 | Total reward: 384.10 | Avg loss: 1.4342 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29416/30000 | Total reward: 637.70 | Avg loss: 1.6265 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29417/30000 | Total reward: 81.90 | Avg loss: 1.2211 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29418/30000 | Total reward: 630.50 | Avg loss: 2.2284 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29419/30000 | Total reward: 662.60 | Avg loss: 1.5267 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29420/30000 | Total reward: 607.10 | Avg loss: 1.7915 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29421/30000 | Total reward: 361.40 | Avg loss: 1.5352 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29422/30000 | Total reward: 72.80 | Avg loss: 1.4390 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29423/30000 | Total reward: 320.00 | Avg loss: 1.7987 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29424/30000 | Total reward: 320.00 | Avg loss: 1.9507 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29425/30000 | Total reward: 320.00 | Avg loss: 1.5713 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29426/30000 | Total reward: 244.80 | Avg loss: 1.9622 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29427/30000 | Total reward: 356.90 | Avg loss: 1.6062 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29428/30000 | Total reward: 320.00 | Avg loss: 1.7368 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29429/30000 | Total reward: 320.00 | Avg loss: 1.5723 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29430/30000 | Total reward: 320.00 | Avg loss: 1.4041 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29431/30000 | Total reward: 476.00 | Avg loss: 1.4020 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29432/30000 | Total reward: 320.00 | Avg loss: 1.5867 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29433/30000 | Total reward: 320.00 | Avg loss: 1.5204 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29434/30000 | Total reward: 320.00 | Avg loss: 1.5304 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29435/30000 | Total reward: 320.00 | Avg loss: 1.4902 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29436/30000 | Total reward: 320.00 | Avg loss: 1.9314 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29437/30000 | Total reward: 320.00 | Avg loss: 1.8681 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29438/30000 | Total reward: 466.00 | Avg loss: 1.7432 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29439/30000 | Total reward: 320.00 | Avg loss: 1.8896 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29440/30000 | Total reward: 320.00 | Avg loss: 1.6145 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29441/30000 | Total reward: 267.60 | Avg loss: 1.3467 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29442/30000 | Total reward: 320.00 | Avg loss: 1.4551 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29443/30000 | Total reward: 320.00 | Avg loss: 1.6083 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29444/30000 | Total reward: 320.00 | Avg loss: 1.4150 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29445/30000 | Total reward: 320.00 | Avg loss: 1.3412 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29446/30000 | Total reward: 511.50 | Avg loss: 1.2865 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29447/30000 | Total reward: 500.60 | Avg loss: 1.5179 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29448/30000 | Total reward: 320.00 | Avg loss: 1.4248 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29449/30000 | Total reward: 320.00 | Avg loss: 1.4886 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29450/30000 | Total reward: 320.00 | Avg loss: 1.6762 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29451/30000 | Total reward: 320.00 | Avg loss: 1.5160 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29452/30000 | Total reward: 421.40 | Avg loss: 1.3658 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29453/30000 | Total reward: 320.00 | Avg loss: 1.4547 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29454/30000 | Total reward: 320.00 | Avg loss: 1.5433 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29455/30000 | Total reward: 118.30 | Avg loss: 1.3679 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29456/30000 | Total reward: 320.00 | Avg loss: 1.3259 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29457/30000 | Total reward: 388.40 | Avg loss: 1.7213 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29458/30000 | Total reward: 320.00 | Avg loss: 2.1700 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29459/30000 | Total reward: 154.70 | Avg loss: 1.6008 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29460/30000 | Total reward: 320.00 | Avg loss: 1.6443 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29461/30000 | Total reward: 320.00 | Avg loss: 1.6031 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29462/30000 | Total reward: 320.00 | Avg loss: 1.6933 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29463/30000 | Total reward: 320.00 | Avg loss: 1.5508 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29464/30000 | Total reward: 320.00 | Avg loss: 1.5001 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29465/30000 | Total reward: 320.00 | Avg loss: 1.4580 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29466/30000 | Total reward: 320.00 | Avg loss: 1.4320 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29467/30000 | Total reward: 320.00 | Avg loss: 1.3558 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29468/30000 | Total reward: 320.00 | Avg loss: 1.4475 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29469/30000 | Total reward: 320.00 | Avg loss: 1.5868 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29470/30000 | Total reward: 0.00 | Avg loss: 0.5756 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29471/30000 | Total reward: 519.70 | Avg loss: 1.6877 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29472/30000 | Total reward: 320.00 | Avg loss: 1.4509 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29473/30000 | Total reward: 320.00 | Avg loss: 1.4327 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29474/30000 | Total reward: 320.00 | Avg loss: 1.5337 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29475/30000 | Total reward: 351.50 | Avg loss: 1.4856 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29476/30000 | Total reward: 320.00 | Avg loss: 1.5334 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29477/30000 | Total reward: 320.00 | Avg loss: 1.4408 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29478/30000 | Total reward: 404.60 | Avg loss: 1.3834 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29479/30000 | Total reward: 320.00 | Avg loss: 1.4339 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29480/30000 | Total reward: 320.00 | Avg loss: 1.6451 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29481/30000 | Total reward: 347.00 | Avg loss: 1.3159 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29482/30000 | Total reward: 320.00 | Avg loss: 1.4331 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29483/30000 | Total reward: 320.00 | Avg loss: 1.3999 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29484/30000 | Total reward: 320.00 | Avg loss: 1.3753 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29485/30000 | Total reward: 320.00 | Avg loss: 1.3682 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29486/30000 | Total reward: 320.00 | Avg loss: 1.3843 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29487/30000 | Total reward: 521.60 | Avg loss: 1.2636 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29488/30000 | Total reward: 320.00 | Avg loss: 1.3254 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29489/30000 | Total reward: 320.00 | Avg loss: 1.2566 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29490/30000 | Total reward: 320.00 | Avg loss: 1.3302 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29491/30000 | Total reward: 320.00 | Avg loss: 1.2552 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29492/30000 | Total reward: 27.30 | Avg loss: 1.1857 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29493/30000 | Total reward: 320.00 | Avg loss: 1.3802 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29494/30000 | Total reward: 320.00 | Avg loss: 1.2768 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29495/30000 | Total reward: 320.00 | Avg loss: 1.4284 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29496/30000 | Total reward: 100.10 | Avg loss: 1.6210 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29497/30000 | Total reward: 320.00 | Avg loss: 1.4223 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29498/30000 | Total reward: 320.00 | Avg loss: 1.4137 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29499/30000 | Total reward: 320.00 | Avg loss: 1.4478 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29500/30000 | Total reward: 320.00 | Avg loss: 1.4024 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+--- Last 100 episodes ---
+Avg reward: 327.58 | Avg loss: 1.5700 | Win rate: 0.0% | Lose rate: 29.0%
+-------------------------
+Episode 29501/30000 | Total reward: 320.00 | Avg loss: 1.3467 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29502/30000 | Total reward: 0.00 | Avg loss: 0.9658 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29503/30000 | Total reward: 371.90 | Avg loss: 1.3816 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29504/30000 | Total reward: 320.00 | Avg loss: 1.3802 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29505/30000 | Total reward: 320.00 | Avg loss: 1.4629 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29506/30000 | Total reward: 182.00 | Avg loss: 1.4906 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29507/30000 | Total reward: 118.30 | Avg loss: 1.4488 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29508/30000 | Total reward: 320.00 | Avg loss: 1.6077 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29509/30000 | Total reward: 436.10 | Avg loss: 1.4834 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29510/30000 | Total reward: 617.90 | Avg loss: 1.5734 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29511/30000 | Total reward: 320.00 | Avg loss: 1.5501 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29512/30000 | Total reward: 320.00 | Avg loss: 1.4737 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29513/30000 | Total reward: 334.20 | Avg loss: 1.5777 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29514/30000 | Total reward: 320.00 | Avg loss: 1.5875 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29515/30000 | Total reward: 320.00 | Avg loss: 1.6205 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29516/30000 | Total reward: 320.00 | Avg loss: 1.7854 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29517/30000 | Total reward: 320.00 | Avg loss: 1.6150 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29518/30000 | Total reward: 320.00 | Avg loss: 1.6672 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29519/30000 | Total reward: 320.00 | Avg loss: 1.4481 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29520/30000 | Total reward: 320.00 | Avg loss: 1.6325 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29521/30000 | Total reward: 27.30 | Avg loss: 1.2867 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29522/30000 | Total reward: 275.80 | Avg loss: 1.6664 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29523/30000 | Total reward: 320.00 | Avg loss: 1.5781 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29524/30000 | Total reward: 320.00 | Avg loss: 1.5644 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29525/30000 | Total reward: 321.30 | Avg loss: 1.6762 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29526/30000 | Total reward: 320.00 | Avg loss: 1.5351 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29527/30000 | Total reward: 320.00 | Avg loss: 1.5000 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29528/30000 | Total reward: 608.00 | Avg loss: 1.2106 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29529/30000 | Total reward: 36.40 | Avg loss: 1.2821 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29530/30000 | Total reward: 320.00 | Avg loss: 1.6666 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29531/30000 | Total reward: 320.00 | Avg loss: 1.5653 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29532/30000 | Total reward: 275.80 | Avg loss: 1.7100 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29533/30000 | Total reward: 320.00 | Avg loss: 1.6759 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29534/30000 | Total reward: 320.00 | Avg loss: 1.3998 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29535/30000 | Total reward: 659.90 | Avg loss: 1.3450 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29536/30000 | Total reward: 617.90 | Avg loss: 1.5339 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29537/30000 | Total reward: 209.30 | Avg loss: 1.3771 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29538/30000 | Total reward: 320.00 | Avg loss: 1.5018 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29539/30000 | Total reward: 320.00 | Avg loss: 1.7393 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29540/30000 | Total reward: 320.00 | Avg loss: 1.6362 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29541/30000 | Total reward: 320.00 | Avg loss: 1.5799 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29542/30000 | Total reward: 320.00 | Avg loss: 1.6239 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29543/30000 | Total reward: 271.20 | Avg loss: 1.5610 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29544/30000 | Total reward: 330.00 | Avg loss: 1.5786 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29545/30000 | Total reward: 320.00 | Avg loss: 1.7327 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29546/30000 | Total reward: 36.40 | Avg loss: 1.5094 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29547/30000 | Total reward: 320.00 | Avg loss: 1.4994 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29548/30000 | Total reward: 320.00 | Avg loss: 1.7827 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29549/30000 | Total reward: 2.90 | Avg loss: 1.6509 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29550/30000 | Total reward: 320.00 | Avg loss: 1.8112 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29551/30000 | Total reward: 320.00 | Avg loss: 1.6102 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29552/30000 | Total reward: 320.00 | Avg loss: 1.7178 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29553/30000 | Total reward: 466.90 | Avg loss: 1.9569 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29554/30000 | Total reward: 320.00 | Avg loss: 1.7720 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29555/30000 | Total reward: 320.00 | Avg loss: 1.6653 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29556/30000 | Total reward: 320.00 | Avg loss: 1.8101 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29557/30000 | Total reward: 320.00 | Avg loss: 1.5635 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29558/30000 | Total reward: 320.00 | Avg loss: 1.8535 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29559/30000 | Total reward: 320.00 | Avg loss: 1.7427 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29560/30000 | Total reward: 320.00 | Avg loss: 1.6526 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29561/30000 | Total reward: 320.00 | Avg loss: 1.7371 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29562/30000 | Total reward: 363.20 | Avg loss: 1.8510 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29563/30000 | Total reward: 320.00 | Avg loss: 1.8041 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29564/30000 | Total reward: 136.50 | Avg loss: 1.4357 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29565/30000 | Total reward: 517.20 | Avg loss: 1.7647 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29566/30000 | Total reward: 320.00 | Avg loss: 2.0681 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29567/30000 | Total reward: 320.00 | Avg loss: 2.0033 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29568/30000 | Total reward: 300.00 | Avg loss: 2.0495 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29569/30000 | Total reward: 63.70 | Avg loss: 1.5793 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29570/30000 | Total reward: 163.80 | Avg loss: 2.5421 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29571/30000 | Total reward: 320.00 | Avg loss: 2.3299 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29572/30000 | Total reward: 320.00 | Avg loss: 2.0898 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29573/30000 | Total reward: 320.00 | Avg loss: 2.0637 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29574/30000 | Total reward: 320.00 | Avg loss: 2.1792 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29575/30000 | Total reward: 320.00 | Avg loss: 2.0889 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29576/30000 | Total reward: 320.00 | Avg loss: 1.9145 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29577/30000 | Total reward: 330.00 | Avg loss: 1.8804 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29578/30000 | Total reward: 662.70 | Avg loss: 2.3084 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29579/30000 | Total reward: 520.60 | Avg loss: 2.0830 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29580/30000 | Total reward: 36.40 | Avg loss: 1.4768 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29581/30000 | Total reward: 154.70 | Avg loss: 1.9274 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29582/30000 | Total reward: 342.60 | Avg loss: 1.9709 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29583/30000 | Total reward: 320.00 | Avg loss: 2.0358 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29584/30000 | Total reward: 659.00 | Avg loss: 2.0841 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29585/30000 | Total reward: 659.00 | Avg loss: 2.1874 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29586/30000 | Total reward: 448.70 | Avg loss: 1.9059 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29587/30000 | Total reward: 320.00 | Avg loss: 2.0953 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29588/30000 | Total reward: 320.00 | Avg loss: 2.0925 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29589/30000 | Total reward: 320.00 | Avg loss: 1.8111 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29590/30000 | Total reward: 320.00 | Avg loss: 1.6709 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29591/30000 | Total reward: 320.00 | Avg loss: 1.5872 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29592/30000 | Total reward: 320.00 | Avg loss: 1.8986 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29593/30000 | Total reward: 320.00 | Avg loss: 1.7662 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29594/30000 | Total reward: 665.40 | Avg loss: 1.7926 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29595/30000 | Total reward: 190.20 | Avg loss: 1.6327 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29596/30000 | Total reward: 663.60 | Avg loss: 2.0989 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29597/30000 | Total reward: 320.00 | Avg loss: 2.1551 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29598/30000 | Total reward: 320.00 | Avg loss: 1.9401 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29599/30000 | Total reward: 320.00 | Avg loss: 1.8617 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29600/30000 | Total reward: 463.30 | Avg loss: 1.5753 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+--- Last 100 episodes ---
+Avg reward: 327.40 | Avg loss: 1.7156 | Win rate: 0.0% | Lose rate: 37.0%
+-------------------------
+Episode 29601/30000 | Total reward: 320.00 | Avg loss: 1.7851 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29602/30000 | Total reward: 154.70 | Avg loss: 1.5597 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29603/30000 | Total reward: 320.00 | Avg loss: 1.7378 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29604/30000 | Total reward: 244.80 | Avg loss: 1.6023 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29605/30000 | Total reward: 320.00 | Avg loss: 1.7494 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29606/30000 | Total reward: 190.20 | Avg loss: 1.7955 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29607/30000 | Total reward: 658.40 | Avg loss: 1.7371 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29608/30000 | Total reward: 320.00 | Avg loss: 1.7792 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29609/30000 | Total reward: 320.00 | Avg loss: 1.8548 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29610/30000 | Total reward: 320.00 | Avg loss: 1.7813 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29611/30000 | Total reward: 320.00 | Avg loss: 1.8621 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29612/30000 | Total reward: 320.00 | Avg loss: 1.9334 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29613/30000 | Total reward: 589.80 | Avg loss: 1.7062 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29614/30000 | Total reward: 527.00 | Avg loss: 1.6529 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29615/30000 | Total reward: 81.90 | Avg loss: 1.5848 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29616/30000 | Total reward: 342.50 | Avg loss: 1.7491 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29617/30000 | Total reward: 529.70 | Avg loss: 1.8018 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29618/30000 | Total reward: 320.00 | Avg loss: 1.7747 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29619/30000 | Total reward: 69.40 | Avg loss: 1.9709 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29620/30000 | Total reward: 357.80 | Avg loss: 1.8704 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29621/30000 | Total reward: 617.10 | Avg loss: 1.9904 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29622/30000 | Total reward: 668.30 | Avg loss: 1.9324 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29623/30000 | Total reward: 320.00 | Avg loss: 1.9206 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29624/30000 | Total reward: 320.00 | Avg loss: 1.7011 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29625/30000 | Total reward: 320.00 | Avg loss: 1.7399 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29626/30000 | Total reward: 320.00 | Avg loss: 1.7330 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29627/30000 | Total reward: 370.40 | Avg loss: 1.9020 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29628/30000 | Total reward: 439.60 | Avg loss: 2.0791 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29629/30000 | Total reward: 300.00 | Avg loss: 1.8392 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29630/30000 | Total reward: 320.00 | Avg loss: 1.7619 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29631/30000 | Total reward: 320.00 | Avg loss: 1.6224 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29632/30000 | Total reward: 510.00 | Avg loss: 1.8736 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29633/30000 | Total reward: 72.80 | Avg loss: 1.2953 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29634/30000 | Total reward: 320.00 | Avg loss: 5.2859 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29635/30000 | Total reward: 527.00 | Avg loss: 2.1165 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29636/30000 | Total reward: 182.00 | Avg loss: 2.4359 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29637/30000 | Total reward: 652.10 | Avg loss: 1.9969 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29638/30000 | Total reward: 320.00 | Avg loss: 2.0165 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29639/30000 | Total reward: 63.70 | Avg loss: 1.4813 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29640/30000 | Total reward: 500.60 | Avg loss: 1.7488 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29641/30000 | Total reward: 320.00 | Avg loss: 1.8887 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29642/30000 | Total reward: 320.00 | Avg loss: 2.0265 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29643/30000 | Total reward: 320.00 | Avg loss: 2.0968 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29644/30000 | Total reward: 153.20 | Avg loss: 1.8390 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29645/30000 | Total reward: 320.00 | Avg loss: 1.9927 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29646/30000 | Total reward: 320.00 | Avg loss: 2.0346 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29647/30000 | Total reward: 536.10 | Avg loss: 1.6809 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29648/30000 | Total reward: 320.00 | Avg loss: 1.8785 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29649/30000 | Total reward: 678.10 | Avg loss: 2.0022 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29650/30000 | Total reward: 320.00 | Avg loss: 1.9304 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29651/30000 | Total reward: 320.00 | Avg loss: 1.9893 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29652/30000 | Total reward: 320.00 | Avg loss: 1.8693 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29653/30000 | Total reward: 320.00 | Avg loss: 1.8789 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29654/30000 | Total reward: 654.80 | Avg loss: 1.7931 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29655/30000 | Total reward: 304.90 | Avg loss: 2.7301 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29656/30000 | Total reward: 527.00 | Avg loss: 1.7904 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29657/30000 | Total reward: 269.40 | Avg loss: 1.8399 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29658/30000 | Total reward: 320.00 | Avg loss: 2.0088 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29659/30000 | Total reward: 320.00 | Avg loss: 1.8744 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29660/30000 | Total reward: 320.00 | Avg loss: 1.7936 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29661/30000 | Total reward: 330.00 | Avg loss: 1.9277 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29662/30000 | Total reward: 320.00 | Avg loss: 1.6362 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29663/30000 | Total reward: 320.00 | Avg loss: 1.6858 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29664/30000 | Total reward: 320.00 | Avg loss: 1.9126 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29665/30000 | Total reward: 330.00 | Avg loss: 1.8480 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29666/30000 | Total reward: 320.00 | Avg loss: 1.5850 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29667/30000 | Total reward: 154.70 | Avg loss: 1.2993 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29668/30000 | Total reward: 617.10 | Avg loss: 1.7366 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29669/30000 | Total reward: 269.40 | Avg loss: 1.9005 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29670/30000 | Total reward: 330.00 | Avg loss: 1.7115 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29671/30000 | Total reward: 320.00 | Avg loss: 1.5980 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29672/30000 | Total reward: 320.00 | Avg loss: 1.8109 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29673/30000 | Total reward: 320.00 | Avg loss: 1.5911 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29674/30000 | Total reward: 545.90 | Avg loss: 1.7012 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29675/30000 | Total reward: 320.00 | Avg loss: 1.8281 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29676/30000 | Total reward: 500.60 | Avg loss: 1.7388 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29677/30000 | Total reward: 282.20 | Avg loss: 1.7104 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29678/30000 | Total reward: 320.00 | Avg loss: 1.8628 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29679/30000 | Total reward: 518.80 | Avg loss: 1.9144 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29680/30000 | Total reward: 320.00 | Avg loss: 1.9155 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29681/30000 | Total reward: 320.00 | Avg loss: 2.0267 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29682/30000 | Total reward: 320.00 | Avg loss: 2.9524 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29683/30000 | Total reward: 320.00 | Avg loss: 2.4312 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29684/30000 | Total reward: 320.00 | Avg loss: 2.1731 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29685/30000 | Total reward: 320.00 | Avg loss: 1.9266 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29686/30000 | Total reward: 320.00 | Avg loss: 1.9917 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29687/30000 | Total reward: 320.00 | Avg loss: 1.9982 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29688/30000 | Total reward: 320.00 | Avg loss: 1.9844 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29689/30000 | Total reward: 320.00 | Avg loss: 1.7583 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29690/30000 | Total reward: 320.00 | Avg loss: 1.7162 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29691/30000 | Total reward: 320.00 | Avg loss: 1.6803 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29692/30000 | Total reward: 320.00 | Avg loss: 1.7920 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29693/30000 | Total reward: 563.40 | Avg loss: 1.8139 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29694/30000 | Total reward: 658.10 | Avg loss: 1.7601 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29695/30000 | Total reward: 320.00 | Avg loss: 1.8841 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29696/30000 | Total reward: 320.00 | Avg loss: 1.8529 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29697/30000 | Total reward: 320.00 | Avg loss: 1.8592 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29698/30000 | Total reward: 320.00 | Avg loss: 1.6515 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29699/30000 | Total reward: 320.00 | Avg loss: 1.6600 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29700/30000 | Total reward: 320.00 | Avg loss: 1.6459 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+--- Last 100 episodes ---
+Avg reward: 354.34 | Avg loss: 1.8817 | Win rate: 0.0% | Lose rate: 38.0%
+-------------------------
+Episode 29701/30000 | Total reward: 608.00 | Avg loss: 1.5498 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29702/30000 | Total reward: 320.00 | Avg loss: 1.7754 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29703/30000 | Total reward: 320.00 | Avg loss: 1.7424 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29704/30000 | Total reward: 563.40 | Avg loss: 1.5491 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29705/30000 | Total reward: 81.90 | Avg loss: 1.2283 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29706/30000 | Total reward: 320.00 | Avg loss: 1.6540 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29707/30000 | Total reward: 320.00 | Avg loss: 1.6118 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29708/30000 | Total reward: 320.00 | Avg loss: 1.7361 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29709/30000 | Total reward: 320.00 | Avg loss: 1.7939 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29710/30000 | Total reward: 320.00 | Avg loss: 1.8453 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29711/30000 | Total reward: 320.00 | Avg loss: 1.6520 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29712/30000 | Total reward: 320.00 | Avg loss: 1.5927 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29713/30000 | Total reward: 320.00 | Avg loss: 1.7031 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29714/30000 | Total reward: 320.00 | Avg loss: 1.5467 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29715/30000 | Total reward: 320.00 | Avg loss: 1.5463 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29716/30000 | Total reward: 320.00 | Avg loss: 1.5837 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29717/30000 | Total reward: 320.00 | Avg loss: 1.6152 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29718/30000 | Total reward: 268.50 | Avg loss: 1.5065 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29719/30000 | Total reward: 320.00 | Avg loss: 1.5764 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29720/30000 | Total reward: 271.20 | Avg loss: 1.6722 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29721/30000 | Total reward: 320.00 | Avg loss: 1.7372 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29722/30000 | Total reward: 320.00 | Avg loss: 1.4688 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29723/30000 | Total reward: 320.00 | Avg loss: 1.5638 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29724/30000 | Total reward: 320.00 | Avg loss: 1.4996 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29725/30000 | Total reward: 635.30 | Avg loss: 1.7134 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29726/30000 | Total reward: 320.00 | Avg loss: 1.4812 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29727/30000 | Total reward: 320.00 | Avg loss: 1.4897 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29728/30000 | Total reward: 267.60 | Avg loss: 1.7577 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29729/30000 | Total reward: 589.80 | Avg loss: 1.7226 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29730/30000 | Total reward: 320.00 | Avg loss: 1.4789 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29731/30000 | Total reward: 320.00 | Avg loss: 1.5724 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29732/30000 | Total reward: 263.00 | Avg loss: 1.5019 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29733/30000 | Total reward: 263.00 | Avg loss: 1.6995 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29734/30000 | Total reward: 320.00 | Avg loss: 1.5346 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29735/30000 | Total reward: 320.00 | Avg loss: 1.5219 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29736/30000 | Total reward: 320.00 | Avg loss: 1.5984 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29737/30000 | Total reward: 320.00 | Avg loss: 1.4982 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29738/30000 | Total reward: 617.10 | Avg loss: 1.8165 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29739/30000 | Total reward: 184.70 | Avg loss: 1.5478 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29740/30000 | Total reward: 320.00 | Avg loss: 1.5871 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29741/30000 | Total reward: 320.00 | Avg loss: 1.7138 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29742/30000 | Total reward: 320.00 | Avg loss: 1.5971 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29743/30000 | Total reward: 626.20 | Avg loss: 1.7607 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29744/30000 | Total reward: 320.00 | Avg loss: 1.5393 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29745/30000 | Total reward: 320.00 | Avg loss: 1.5287 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29746/30000 | Total reward: 320.00 | Avg loss: 1.4743 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29747/30000 | Total reward: 320.00 | Avg loss: 1.3873 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29748/30000 | Total reward: 320.00 | Avg loss: 1.5481 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29749/30000 | Total reward: 320.00 | Avg loss: 1.5712 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29750/30000 | Total reward: 320.00 | Avg loss: 1.5712 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29751/30000 | Total reward: 320.00 | Avg loss: 1.4907 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29752/30000 | Total reward: 330.00 | Avg loss: 1.4447 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29753/30000 | Total reward: 526.60 | Avg loss: 1.4556 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29754/30000 | Total reward: 320.00 | Avg loss: 1.3932 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29755/30000 | Total reward: 320.00 | Avg loss: 1.3330 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29756/30000 | Total reward: 320.00 | Avg loss: 1.4456 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29757/30000 | Total reward: 36.40 | Avg loss: 1.4786 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29758/30000 | Total reward: 579.80 | Avg loss: 1.3042 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29759/30000 | Total reward: 377.70 | Avg loss: 1.3358 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29760/30000 | Total reward: 270.30 | Avg loss: 1.4026 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29761/30000 | Total reward: 320.00 | Avg loss: 1.4040 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29762/30000 | Total reward: 330.00 | Avg loss: 1.4548 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29763/30000 | Total reward: 320.00 | Avg loss: 1.5029 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29764/30000 | Total reward: 320.00 | Avg loss: 1.3932 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29765/30000 | Total reward: 569.30 | Avg loss: 1.4430 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29766/30000 | Total reward: 357.70 | Avg loss: 1.6253 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29767/30000 | Total reward: 320.00 | Avg loss: 1.5955 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29768/30000 | Total reward: 320.00 | Avg loss: 1.6435 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29769/30000 | Total reward: 320.00 | Avg loss: 1.6904 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29770/30000 | Total reward: 320.00 | Avg loss: 1.5571 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29771/30000 | Total reward: 330.00 | Avg loss: 1.4699 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29772/30000 | Total reward: 653.50 | Avg loss: 1.4839 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29773/30000 | Total reward: 653.50 | Avg loss: 1.3962 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29774/30000 | Total reward: 182.00 | Avg loss: 1.3642 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29775/30000 | Total reward: 653.50 | Avg loss: 1.4082 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29776/30000 | Total reward: 651.70 | Avg loss: 1.8000 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29777/30000 | Total reward: 320.00 | Avg loss: 1.6674 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29778/30000 | Total reward: 386.60 | Avg loss: 1.5110 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29779/30000 | Total reward: 502.40 | Avg loss: 1.6148 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29780/30000 | Total reward: 518.90 | Avg loss: 1.5450 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29781/30000 | Total reward: 320.00 | Avg loss: 1.7425 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29782/30000 | Total reward: 320.00 | Avg loss: 1.5865 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29783/30000 | Total reward: 686.30 | Avg loss: 1.5509 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29784/30000 | Total reward: 574.70 | Avg loss: 1.8230 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29785/30000 | Total reward: 673.70 | Avg loss: 1.8535 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29786/30000 | Total reward: 253.90 | Avg loss: 1.6807 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29787/30000 | Total reward: 331.70 | Avg loss: 1.5527 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29788/30000 | Total reward: 339.50 | Avg loss: 1.4027 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29789/30000 | Total reward: 320.00 | Avg loss: 149.2102 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29790/30000 | Total reward: 510.80 | Avg loss: 2.4051 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29791/30000 | Total reward: 339.50 | Avg loss: 2.4531 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29792/30000 | Total reward: 625.10 | Avg loss: 2.1840 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29793/30000 | Total reward: 55.50 | Avg loss: 2.0123 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29794/30000 | Total reward: 104.10 | Avg loss: 2.2915 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29795/30000 | Total reward: 55.50 | Avg loss: 2.2151 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29796/30000 | Total reward: -210.00 | Avg loss: 2.2867 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29797/30000 | Total reward: 320.00 | Avg loss: 2.3035 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29798/30000 | Total reward: 198.40 | Avg loss: 1.8812 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29799/30000 | Total reward: 44.70 | Avg loss: 2.2298 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29800/30000 | Total reward: 429.80 | Avg loss: 2.1855 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+--- Last 100 episodes ---
+Avg reward: 351.23 | Avg loss: 3.1147 | Win rate: 0.0% | Lose rate: 43.0%
+-------------------------
+Episode 29801/30000 | Total reward: 218.40 | Avg loss: 1.8229 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29802/30000 | Total reward: 78.00 | Avg loss: 1.9832 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29803/30000 | Total reward: 508.10 | Avg loss: 2.2336 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29804/30000 | Total reward: 603.50 | Avg loss: 2.2235 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29805/30000 | Total reward: 545.00 | Avg loss: 2.3729 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29806/30000 | Total reward: 520.70 | Avg loss: 2.2327 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29807/30000 | Total reward: 541.40 | Avg loss: 2.3188 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29808/30000 | Total reward: 625.30 | Avg loss: 2.5272 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29809/30000 | Total reward: 387.50 | Avg loss: 2.2758 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29810/30000 | Total reward: 619.70 | Avg loss: 2.5909 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29811/30000 | Total reward: 200.20 | Avg loss: 3.4226 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29812/30000 | Total reward: 386.60 | Avg loss: 2.3218 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29813/30000 | Total reward: 414.50 | Avg loss: 2.1928 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29814/30000 | Total reward: 81.90 | Avg loss: 2.7558 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29815/30000 | Total reward: 363.20 | Avg loss: 2.1770 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29816/30000 | Total reward: 524.30 | Avg loss: 2.0015 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29817/30000 | Total reward: -45.30 | Avg loss: 2.2325 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29818/30000 | Total reward: 134.70 | Avg loss: 2.2739 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29819/30000 | Total reward: 81.60 | Avg loss: 2.3189 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29820/30000 | Total reward: 449.60 | Avg loss: 2.3481 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29821/30000 | Total reward: 185.10 | Avg loss: 2.2422 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29822/30000 | Total reward: 320.00 | Avg loss: 2.2907 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29823/30000 | Total reward: 188.70 | Avg loss: 2.0809 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29824/30000 | Total reward: -200.00 | Avg loss: 2.2989 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29825/30000 | Total reward: 193.20 | Avg loss: 2.3508 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29826/30000 | Total reward: 320.00 | Avg loss: 2.4531 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29827/30000 | Total reward: 320.00 | Avg loss: 2.7141 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29828/30000 | Total reward: 682.70 | Avg loss: 2.7802 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29829/30000 | Total reward: 0.70 | Avg loss: 2.6477 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29830/30000 | Total reward: 320.00 | Avg loss: 2.6449 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29831/30000 | Total reward: 612.50 | Avg loss: 2.5135 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29832/30000 | Total reward: 343.40 | Avg loss: 2.6749 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29833/30000 | Total reward: 320.00 | Avg loss: 2.6163 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29834/30000 | Total reward: 320.00 | Avg loss: 2.4850 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29835/30000 | Total reward: 430.50 | Avg loss: 2.6584 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29836/30000 | Total reward: 320.00 | Avg loss: 2.8012 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29837/30000 | Total reward: 607.10 | Avg loss: 2.5244 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29838/30000 | Total reward: 484.20 | Avg loss: 2.1479 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29839/30000 | Total reward: 545.90 | Avg loss: 2.5742 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29840/30000 | Total reward: 493.70 | Avg loss: 2.6440 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29841/30000 | Total reward: 639.50 | Avg loss: 2.9814 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29842/30000 | Total reward: 320.00 | Avg loss: 2.6681 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29843/30000 | Total reward: 531.50 | Avg loss: 2.5264 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29844/30000 | Total reward: 182.00 | Avg loss: 2.7502 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29845/30000 | Total reward: 538.70 | Avg loss: 2.5447 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29846/30000 | Total reward: 562.60 | Avg loss: 2.4717 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29847/30000 | Total reward: 440.60 | Avg loss: 2.7533 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29848/30000 | Total reward: 320.00 | Avg loss: 2.6495 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29849/30000 | Total reward: 320.00 | Avg loss: 2.4364 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29850/30000 | Total reward: 617.00 | Avg loss: 2.4018 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29851/30000 | Total reward: 587.30 | Avg loss: 2.5887 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29852/30000 | Total reward: 275.80 | Avg loss: 2.2513 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29853/30000 | Total reward: 320.00 | Avg loss: 2.5489 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29854/30000 | Total reward: 320.00 | Avg loss: 2.7491 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29855/30000 | Total reward: 660.80 | Avg loss: 2.5054 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29856/30000 | Total reward: 320.00 | Avg loss: 2.5086 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29857/30000 | Total reward: 182.00 | Avg loss: 2.4708 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29858/30000 | Total reward: 320.00 | Avg loss: 2.5766 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29859/30000 | Total reward: 320.00 | Avg loss: 2.5421 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29860/30000 | Total reward: 320.00 | Avg loss: 2.4357 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29861/30000 | Total reward: 565.70 | Avg loss: 2.4780 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29862/30000 | Total reward: 244.80 | Avg loss: 2.5939 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29863/30000 | Total reward: 458.60 | Avg loss: 2.6698 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29864/30000 | Total reward: 631.40 | Avg loss: 2.8383 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29865/30000 | Total reward: 508.10 | Avg loss: 2.7373 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29866/30000 | Total reward: 640.40 | Avg loss: 2.9838 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29867/30000 | Total reward: 582.80 | Avg loss: 2.7171 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29868/30000 | Total reward: 437.00 | Avg loss: 2.7156 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29869/30000 | Total reward: 320.00 | Avg loss: 2.5521 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29870/30000 | Total reward: 608.00 | Avg loss: 2.5176 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29871/30000 | Total reward: 320.00 | Avg loss: 2.5340 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29872/30000 | Total reward: 412.30 | Avg loss: 2.7883 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29873/30000 | Total reward: 320.00 | Avg loss: 2.8456 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29874/30000 | Total reward: 622.90 | Avg loss: 2.3976 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29875/30000 | Total reward: 330.00 | Avg loss: 2.6056 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29876/30000 | Total reward: 320.00 | Avg loss: 2.4768 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29877/30000 | Total reward: 330.00 | Avg loss: 2.5420 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29878/30000 | Total reward: 483.30 | Avg loss: 2.5866 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29879/30000 | Total reward: 320.00 | Avg loss: 2.6483 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29880/30000 | Total reward: 320.00 | Avg loss: 2.6057 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29881/30000 | Total reward: 320.00 | Avg loss: 2.6590 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29882/30000 | Total reward: 501.00 | Avg loss: 2.6972 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29883/30000 | Total reward: 390.20 | Avg loss: 2.6375 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29884/30000 | Total reward: 320.00 | Avg loss: 2.6135 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29885/30000 | Total reward: 320.00 | Avg loss: 2.4379 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29886/30000 | Total reward: 320.00 | Avg loss: 2.5814 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29887/30000 | Total reward: 635.30 | Avg loss: 2.5002 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29888/30000 | Total reward: 267.60 | Avg loss: 2.3009 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29889/30000 | Total reward: 539.60 | Avg loss: 2.7690 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29890/30000 | Total reward: 543.40 | Avg loss: 2.6077 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29891/30000 | Total reward: 320.00 | Avg loss: 2.4652 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29892/30000 | Total reward: 320.00 | Avg loss: 2.5540 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29893/30000 | Total reward: 320.00 | Avg loss: 2.5312 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29894/30000 | Total reward: 320.00 | Avg loss: 2.4436 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29895/30000 | Total reward: 320.00 | Avg loss: 2.4785 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29896/30000 | Total reward: 320.00 | Avg loss: 2.5091 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29897/30000 | Total reward: 250.00 | Avg loss: 2.6238 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29898/30000 | Total reward: 18.20 | Avg loss: 2.5901 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29899/30000 | Total reward: 250.00 | Avg loss: 2.7169 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29900/30000 | Total reward: -160.00 | Avg loss: 2.8133 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+--- Last 100 episodes ---
+Avg reward: 373.55 | Avg loss: 2.5249 | Win rate: 0.0% | Lose rate: 62.0%
+-------------------------
+Episode 29901/30000 | Total reward: 65.90 | Avg loss: 2.6915 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29902/30000 | Total reward: 320.00 | Avg loss: 2.7419 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29903/30000 | Total reward: 220.70 | Avg loss: 3.2719 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29904/30000 | Total reward: 34.40 | Avg loss: 2.8141 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29905/30000 | Total reward: 94.70 | Avg loss: 3.1771 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29906/30000 | Total reward: 269.40 | Avg loss: 3.1987 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29907/30000 | Total reward: 177.50 | Avg loss: 3.1583 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29908/30000 | Total reward: 320.00 | Avg loss: 2.9111 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29909/30000 | Total reward: 320.00 | Avg loss: 2.8754 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29910/30000 | Total reward: 320.00 | Avg loss: 3.0253 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29911/30000 | Total reward: 111.80 | Avg loss: 3.0170 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29912/30000 | Total reward: 633.50 | Avg loss: 3.1714 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29913/30000 | Total reward: 330.00 | Avg loss: 2.9045 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29914/30000 | Total reward: 320.00 | Avg loss: 2.9445 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29915/30000 | Total reward: 236.90 | Avg loss: 2.5304 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29916/30000 | Total reward: 38.90 | Avg loss: 2.7001 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29917/30000 | Total reward: -160.00 | Avg loss: 2.9566 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29918/30000 | Total reward: -160.00 | Avg loss: 2.8196 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29919/30000 | Total reward: -69.10 | Avg loss: 2.7726 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29920/30000 | Total reward: -140.00 | Avg loss: 2.7790 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29921/30000 | Total reward: 199.10 | Avg loss: 2.8233 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29922/30000 | Total reward: 250.00 | Avg loss: 3.0065 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29923/30000 | Total reward: 263.00 | Avg loss: 3.7600 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29924/30000 | Total reward: 65.00 | Avg loss: 3.0619 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29925/30000 | Total reward: 370.00 | Avg loss: 3.0543 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29926/30000 | Total reward: -12.20 | Avg loss: 3.2603 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29927/30000 | Total reward: 245.90 | Avg loss: 2.8520 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29928/30000 | Total reward: 159.50 | Avg loss: 3.0223 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29929/30000 | Total reward: 220.40 | Avg loss: 3.5567 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29930/30000 | Total reward: -190.00 | Avg loss: 3.3948 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29931/30000 | Total reward: -78.40 | Avg loss: 3.0943 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29932/30000 | Total reward: 92.00 | Avg loss: 3.0353 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29933/30000 | Total reward: -160.00 | Avg loss: 3.4427 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29934/30000 | Total reward: -160.00 | Avg loss: 3.2374 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29935/30000 | Total reward: -160.00 | Avg loss: 3.3558 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29936/30000 | Total reward: 163.10 | Avg loss: 3.6194 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29937/30000 | Total reward: 102.00 | Avg loss: 3.4187 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29938/30000 | Total reward: 162.20 | Avg loss: 3.4630 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29939/30000 | Total reward: 156.80 | Avg loss: 3.7391 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29940/30000 | Total reward: 22.70 | Avg loss: 3.8647 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29941/30000 | Total reward: -160.00 | Avg loss: 4.4855 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29942/30000 | Total reward: 112.70 | Avg loss: 5.5003 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29943/30000 | Total reward: -160.00 | Avg loss: 4.5642 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29944/30000 | Total reward: -150.00 | Avg loss: 3.6674 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29945/30000 | Total reward: -150.00 | Avg loss: 3.7572 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29946/30000 | Total reward: 116.30 | Avg loss: 4.1156 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29947/30000 | Total reward: -70.00 | Avg loss: 3.7687 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29948/30000 | Total reward: 213.50 | Avg loss: 3.7996 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29949/30000 | Total reward: 174.80 | Avg loss: 3.7670 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29950/30000 | Total reward: 98.90 | Avg loss: 4.6532 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29951/30000 | Total reward: -100.60 | Avg loss: 4.7366 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29952/30000 | Total reward: 101.60 | Avg loss: 4.0004 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29953/30000 | Total reward: 43.40 | Avg loss: 4.2333 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29954/30000 | Total reward: 17.30 | Avg loss: 3.8078 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29955/30000 | Total reward: 125.00 | Avg loss: 3.8052 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29956/30000 | Total reward: 252.20 | Avg loss: 3.6467 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29957/30000 | Total reward: 65.00 | Avg loss: 3.9464 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29958/30000 | Total reward: -160.00 | Avg loss: 3.9243 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29959/30000 | Total reward: 79.10 | Avg loss: 3.6050 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29960/30000 | Total reward: 170.90 | Avg loss: 3.7479 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29961/30000 | Total reward: 6.20 | Avg loss: 3.8061 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29962/30000 | Total reward: 236.00 | Avg loss: 3.5516 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29963/30000 | Total reward: -190.00 | Avg loss: 3.5541 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29964/30000 | Total reward: 46.10 | Avg loss: 3.6401 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29965/30000 | Total reward: -160.00 | Avg loss: 3.5243 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29966/30000 | Total reward: -160.00 | Avg loss: 3.5149 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29967/30000 | Total reward: 146.90 | Avg loss: 3.3046 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29968/30000 | Total reward: 232.40 | Avg loss: 4.1207 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29969/30000 | Total reward: -173.80 | Avg loss: 3.5590 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29970/30000 | Total reward: -114.10 | Avg loss: 3.5626 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29971/30000 | Total reward: -160.00 | Avg loss: 3.6140 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29972/30000 | Total reward: -160.00 | Avg loss: 3.2227 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29973/30000 | Total reward: 118.30 | Avg loss: 4.0494 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29974/30000 | Total reward: -45.70 | Avg loss: 3.6755 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29975/30000 | Total reward: 183.80 | Avg loss: 3.7434 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29976/30000 | Total reward: 191.00 | Avg loss: 3.6391 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29977/30000 | Total reward: -53.80 | Avg loss: 3.4126 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29978/30000 | Total reward: 256.70 | Avg loss: 3.3074 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29979/30000 | Total reward: 191.00 | Avg loss: 3.1264 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29980/30000 | Total reward: -44.80 | Avg loss: 3.2126 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29981/30000 | Total reward: 232.40 | Avg loss: 3.0779 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29982/30000 | Total reward: 205.40 | Avg loss: 3.4703 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29983/30000 | Total reward: 241.40 | Avg loss: 3.4288 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29984/30000 | Total reward: 235.70 | Avg loss: 3.5274 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29985/30000 | Total reward: 7.40 | Avg loss: 3.1605 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29986/30000 | Total reward: 252.20 | Avg loss: 2.8514 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29987/30000 | Total reward: -160.00 | Avg loss: 3.4479 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29988/30000 | Total reward: 193.70 | Avg loss: 3.4502 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29989/30000 | Total reward: -154.60 | Avg loss: 3.2492 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29990/30000 | Total reward: 192.80 | Avg loss: 3.1199 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29991/30000 | Total reward: 235.10 | Avg loss: 3.3438 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29992/30000 | Total reward: 146.00 | Avg loss: 3.5376 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29993/30000 | Total reward: 153.20 | Avg loss: 3.2860 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29994/30000 | Total reward: -160.00 | Avg loss: 3.2996 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29995/30000 | Total reward: -28.60 | Avg loss: 3.5260 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29996/30000 | Total reward: -160.00 | Avg loss: 3.5824 | Epsilon: 0.010 |  | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29997/30000 | Total reward: 111.80 | Avg loss: 3.5279 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29998/30000 | Total reward: 230.60 | Avg loss: 3.5536 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 29999/30000 | Total reward: -48.40 | Avg loss: 3.5827 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+Episode 30000/30000 | Total reward: -132.10 | Avg loss: 3.5323 | Epsilon: 0.010 | LOSE | MEMORY_SIZE: 50000 | SEED: 597
+--- Last 100 episodes ---
+Avg reward: 75.56 | Avg loss: 3.4475 | Win rate: 0.0% | Lose rate: 71.0%
+-------------------------
+Model saved to models/pacman_dqn_v2.2.pth
+Saved model keys: ['model_state_dict', 'input_size', 'input_shape']
+Total execution time: 23558.21 seconds
+Saved metrics plot to metrics/pacman_dqn_v2.2_metrics.png

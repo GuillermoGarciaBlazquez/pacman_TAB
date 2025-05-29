@@ -17,7 +17,7 @@ class PacmanGymEnv(gym.Env):
         self.game = None
         self.state = None
         self.done = False
-        self.prev_score = 0  # Для хранения предыдущего счёта
+        self.prev_score = 0  # For storing previous score
 
         # Example: 5 actions (Stop, North, South, East, West)
         self.action_space = spaces.Discrete(5)
@@ -30,7 +30,7 @@ class PacmanGymEnv(gym.Env):
         self.state = GameState()
         self.state.initialize(self.layout)
         self.done = False
-        self.prev_score = self.state.getScore()  # Сброс предыдущего счёта
+        self.prev_score = self.state.getScore()  # Reset previous score
         return self._get_obs()
 
     def step(self, action):

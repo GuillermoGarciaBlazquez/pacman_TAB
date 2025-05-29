@@ -263,7 +263,7 @@ class NeuralAgent(Agent):
     A Pacman agent that uses a neural network to make decisions
     based on the evaluation of the game state.
     """
-    def __init__(self, model_path="models/pacman_dqn_v1.6.pth"):
+    def __init__(self, model_path="models/pacman_dqn_v2.2.pth"):
         super().__init__()
         self.model = None
         self.input_size = None
@@ -513,7 +513,7 @@ class AlphaBetaNeuralAgent(Agent):
             checkpoint = torch.load(model_path, map_location=self.device)
             self.input_size = checkpoint['input_size']
             # ValueNet: input_shape, hidden_size
-            from net_state_dqn import StateValueNet
+            from rl_net.net_state_dqn import StateValueNet
             self.model = StateValueNet(self.input_size, 128).to(self.device)
             self.model.load_state_dict(checkpoint['model_state_dict'])
             self.model.eval()

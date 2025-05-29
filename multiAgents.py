@@ -260,17 +260,17 @@ better = betterEvaluationFunction
 
 class NeuralAgent(Agent):
     """
-    A Pacman agent that uses a neural network to make decisions
-    based on the evaluation of the game state.
+    Un agente de Pacman que utiliza una red neuronal para tomar decisiones
+    basado en la evaluación del estado del juego.
     """
-    def __init__(self, model_path="models/pacman_dqn_v2.2.pth"):
+    def __init__(self, model_path="models/pacman_model_prediction_1.pth"):
         super().__init__()
         self.model = None
         self.input_size = None
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.load_model(model_path)
         
-        # Mapping from indices to actions
+        # Mapeo de índices a acciones
         self.idx_to_action = {
             0: Directions.STOP,
             1: Directions.NORTH,
@@ -279,134 +279,131 @@ class NeuralAgent(Agent):
             4: Directions.WEST
         }
         
-        # For evaluating alternatives
+        # Para evaluar alternativas
         self.action_to_idx = {v: k for k, v in self.idx_to_action.items()}
         
-        # Move counter
+        # Contador de movimientos
         self.move_count = 0
         
-        print(f"NeuralAgent initialized, using device: {self.device}")
+        print(f"NeuralAgent inicializado, usando dispositivo: {self.device}")
 
     def load_model(self, model_path):
-        """Loads the model from the saved file"""
+        """Carga el modelo desde el archivo guardado"""
         try:
             if not os.path.exists(model_path):
-                print(f"ERROR: Model not found at {model_path}")
+                print(f"ERROR: No se encontró el modelo en {model_path}")
                 return False
                 
-            # Load the model
+            # Cargar el modelo
             checkpoint = torch.load(model_path, map_location=self.device)
             self.input_size = checkpoint['input_size']
             
-            # Create and load the model
+            # Crear y cargar el modelo
             self.model = PacmanNet(self.input_size, 128, 5).to(self.device)
-            try:
-                self.model.load_state_dict(checkpoint['model_state_dict'])
-            except Exception as e:
-                print(f"Warning: Model state_dict mismatch or error: {e}")
-                return False
-            self.model.eval()  # Always set to eval mode for inference
-            print(f"Model loaded successfully from {model_path}")
-            print(f"Input size: {self.input_size}")
+            self.model.load_state_dict(checkpoint['model_state_dict'])
+            self.model.eval()  # Modo evaluación
+            
+            print(f"Modelo cargado correctamente desde {model_path}")
+            print(f"Tamaño de entrada: {self.input_size}")
             return True
         except Exception as e:
-            print(f"Error loading model: {e}")
+            print(f"Error al cargar el modelo: {e}")
             return False
 
     def state_to_matrix(self, state):
-        """Converts the game state into a normalized numeric matrix"""
-        # Get board dimensions
+        """Convierte el estado del juego en una matriz numérica normalizada"""
+        # Obtener dimensiones del tablero
         walls = state.getWalls()
         width, height = walls.width, walls.height
         
-        # Create a numeric matrix
-        # 0: wall, 1: empty space, 2: food, 3: capsule, 4: ghost, 5: Pacman
+        # Crear una matriz numérica
+        # 0: pared, 1: espacio vacío, 2: comida, 3: cápsula, 4: fantasma, 5: Pacman
         numeric_map = np.zeros((width, height), dtype=np.float32)
         
-        # Set empty spaces (everything that's not a wall starts as empty)
+        # Establecer espacios vacíos (todo lo que no es pared comienza como espacio vacío)
         for x in range(width):
             for y in range(height):
                 if not walls[x][y]:
                     numeric_map[x][y] = 1
         
-        # Add food
+        # Agregar comida
         food = state.getFood()
         for x in range(width):
             for y in range(height):
                 if food[x][y]:
                     numeric_map[x][y] = 2
         
-        # Add capsules
+        # Agregar cápsulas
         for x, y in state.getCapsules():
             numeric_map[x][y] = 3
         
-        # Add ghosts
+        # Agregar fantasmas
         for ghost_state in state.getGhostStates():
             ghost_x, ghost_y = int(ghost_state.getPosition()[0]), int(ghost_state.getPosition()[1])
-            # If the ghost is scared, mark it differently
+            # Si el fantasma está asustado, marcarlo diferente
             if ghost_state.scaredTimer > 0:
-                numeric_map[ghost_x][ghost_y] = 6  # Scared ghost
+                numeric_map[ghost_x][ghost_y] = 6  # Fantasma asustado
             else:
-                numeric_map[ghost_x][ghost_y] = 4  # Normal ghost
+                numeric_map[ghost_x][ghost_y] = 4  # Fantasma normal
         
-        # Add Pacman
+        # Agregar Pacman
         pacman_x, pacman_y = state.getPacmanPosition()
         numeric_map[int(pacman_x)][int(pacman_y)] = 5
         
-        # Normalize
+        # Normalizar
         numeric_map = numeric_map / 6.0
         
         return numeric_map
 
     def evaluationFunction(self, state):
         """
-        An evaluation function based on the neural network and additional heuristics.
+        Una función de evaluación basada en la red neuronal y en heurísticas adicionales.
         """
         if self.model is None:
-            return 0  # If no model, return 0
+            return 0  # Si no hay modelo, devolver 0
         
-        # Convert to matrix
+        # Convertir a matriz
         state_matrix = self.state_to_matrix(state)
         
-        # Convert to tensor
+        # Convertir a tensor
         state_tensor = torch.FloatTensor(state_matrix).unsqueeze(0).to(self.device)
         
-        # Always set model to eval mode before inference
+        # Asegurarse de que el modelo esté en modo evaluación (importante para BatchNorm/Dropout)
         self.model.eval()
         with torch.no_grad():
             output = self.model(state_tensor)
             probabilities = torch.nn.functional.softmax(output, dim=1).cpu().numpy()[0]
         
-        # Get legal actions
+        # Obtener acciones legales
         legal_actions = state.getLegalActions()
         
-        # Apply additional heuristics, similar to betterEvaluationFunction
+        # Aplicar heurísticas adicionales, similar a betterEvaluationFunction
         score = state.getScore()
         
-        # Improve evaluation with domain knowledge
+        # Mejorar la evaluación con conocimiento del dominio
         pacman_pos = state.getPacmanPosition()
         food = state.getFood().asList()
         ghost_states = state.getGhostStates()
         
-        # Factor 1: Distance to the nearest food
+        # Factor 1: Distancia a la comida más cercana
         if food:
             min_food_distance = min(manhattanDistance(pacman_pos, food_pos) for food_pos in food)
             score += 1.0 / (min_food_distance + 1)
         
-        # Factor 2: Proximity to ghosts
+        # Factor 2: Proximidad a fantasmas
         for ghost_state in ghost_states:
             ghost_pos = ghost_state.getPosition()
             ghost_distance = manhattanDistance(pacman_pos, ghost_pos)
             
             if ghost_state.scaredTimer > 0:
-                # If the ghost is scared, approach it
+                # Si el fantasma está asustado, acercarse a él
                 score += 50 / (ghost_distance + 1)
             else:
-                # If not scared, avoid it
+                # Si no está asustado, evitarlo
                 if ghost_distance <= 2:
-                    score -= 200  # Large penalty for being too close
+                    score -= 200  # Gran penalización por estar demasiado cerca
         
-        # Combine the neural network score with the heuristic
+        # Combinar la puntuación de la red con la heurística
         neural_score = 0
         for i, action in enumerate(self.idx_to_action.values()):
             if action in legal_actions:
@@ -416,50 +413,50 @@ class NeuralAgent(Agent):
 
     def getAction(self, state):
         """
-        Returns the best action based on the neural network evaluation
-        and additional heuristics.
+        Devuelve la mejor acción basada en la evaluación de la red neuronal
+        y heurísticas adicionales.
         """
         self.move_count += 1
         
-        # If no model, make a random move
+        # Si no hay modelo, hacer un movimiento aleatorio
         if self.model is None:
-            print("ERROR: Model not loaded. Making random move.")
+            print("ERROR: Modelo no cargado. Haciendo movimiento aleatorio.")
             exit()
             legal_actions = state.getLegalActions()
             return random.choice(legal_actions)
         
-        # Get legal actions
+        # Obtener acciones legales
         legal_actions = state.getLegalActions()
         
-        # Direct evaluation with the neural network
+        # Evaluación directa con la red neuronal
         state_matrix = self.state_to_matrix(state)
         state_tensor = torch.FloatTensor(state_matrix).unsqueeze(0).to(self.device)
         
-        # Always set model to eval mode before inference
+        # Asegurarse de que el modelo esté en modo evaluación (importante para BatchNorm/Dropout)
         self.model.eval()
         with torch.no_grad():
             output = self.model(state_tensor)
             probabilities = torch.nn.functional.softmax(output, dim=1).cpu().numpy()[0]
         
-        # Map model indices to game actions
+        # Mapear índices del modelo a acciones del juego
         action_probs = []
         for idx, prob in enumerate(probabilities):
             action = self.idx_to_action[idx]
             if action in legal_actions:
                 action_probs.append((action, prob))
         
-        # Sort by probability (descending)
+        # Ordenar por probabilidad (mayor a menor)
         action_probs.sort(key=lambda x: x[1], reverse=True)
         
-        # Exploration: with a decreasing probability, choose randomly
-        exploration_rate = 0.2 * (0.99 ** self.move_count)  # Decreases over time
+        # Exploración: con una probabilidad decreciente, elegir aleatoriamente
+        exploration_rate = 0.2 * (0.99 ** self.move_count)  # Disminuye con el tiempo
         if random.random() < exploration_rate:
-            # Exclude STOP if possible
+            # Excluir STOP si es posible
             if len(legal_actions) > 1 and Directions.STOP in legal_actions:
                 legal_actions.remove(Directions.STOP)
             return random.choice(legal_actions)
         
-        # Alternative evaluation: generate successors and evaluate each
+        # Evaluación alternativa: generar sucesores y evaluar cada uno
         successors = []
         for action in legal_actions:
             successor = state.generateSuccessor(0, action)
@@ -469,20 +466,21 @@ class NeuralAgent(Agent):
                 if a == action:
                     neural_score = p * 100
                     break
-            # Combine heuristic evaluation with the network prediction
+            # Combinar evaluación heurística con la predicción de la red
             combined_score = eval_score + neural_score
             
-            # Penalize STOP unless it's the only option
+            # Penalizar STOP a menos que sea la única opción
             if action == Directions.STOP and len(legal_actions) > 1:
                 combined_score -= 50
                 
             successors.append((action, combined_score))
         
-        # Sort by combined score
+        # Ordenar por puntuación combinada
         successors.sort(key=lambda x: x[1], reverse=True)
         
-        # Return the best action
+        # Devolver la mejor acción
         return successors[0][0]
+
 
 # Define a function to create the agent
 def createNeuralAgent(model_path="models/pacman_model.pth"):

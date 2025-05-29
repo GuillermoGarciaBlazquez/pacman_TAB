@@ -35,8 +35,8 @@ LEARNING_RATE = 0.0001
 GAMMA = 0.99
 EPS_START = 1.0
 EPS_END = 0.01
-EPS_DECAY_STEPS = 15000  # Сколько эпизодов нужно для снижения epsilon от EPS_START до EPS_END
-TAU = 0.0005  # Параметр мягкого обновления
+EPS_DECAY_STEPS = 15000  # Number of episodes to decay epsilon from EPS_START to EPS_END
+TAU = 0.0005  # Soft update parameter
 MEMORY_SIZE = 50000
 TARGET_UPDATE = 1000
 NUM_EPISODES = 30000
@@ -114,9 +114,9 @@ def optimize_model(policy_net, target_net, memory, optimizer, device):
     q_values = torch.clamp(q_values, -50, 50)
     # --- Double DQN target calculation ---
     with torch.no_grad():
-        # 1. Выбрать действия с максимальным Q по policy_net
+        # 1. Select actions with maximum Q from policy_net
         next_actions = policy_net(next_states).argmax(1, keepdim=True)
-        # 2. Получить Q этих действий по target_net
+        # 2. Get Q of these actions from target_net
         next_q_values = target_net(next_states).gather(1, next_actions).squeeze(1)
         expected_q_values = rewards + (GAMMA * next_q_values * (1 - dones))
     loss = nn.MSELoss()(q_values, expected_q_values.detach())
@@ -259,9 +259,9 @@ def main():
                 q_values = policy_net(states).gather(1, actions.unsqueeze(1)).squeeze(1)
                 # --- Double DQN target calculation ---
                 with torch.no_grad():
-                    # 1. Выбрать действия с максимальным Q по policy_net
+                    # 1. Select actions with maximum Q from policy_net
                     next_actions = policy_net(next_states).argmax(1, keepdim=True)
-                    # 2. Получить Q этих действий по target_net
+                    # 2. Get Q of these actions from target_net
                     next_q_values = target_net(next_states).gather(1, next_actions).squeeze(1)
                     expected_q_values = rewards + (GAMMA * next_q_values * (1 - dones))
                 loss = nn.MSELoss()(q_values, expected_q_values.detach())
@@ -306,10 +306,10 @@ def main():
                 max_q, min_q, mean_q, epsilon
             ])
 
-        # Линейное снижение epsilon
+        # Linear epsilon decay
         epsilon = max(EPS_END, EPS_START - (EPS_START - EPS_END) * (episode / EPS_DECAY_STEPS))
 
-        # --- Мягкое обновление целевой сети (soft update) ---
+        # --- Soft update of the target network ---
         target_net_state_dict = target_net.state_dict()
         policy_net_state_dict = policy_net.state_dict()
         for key in policy_net_state_dict:

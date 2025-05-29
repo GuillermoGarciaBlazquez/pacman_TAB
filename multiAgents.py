@@ -13,7 +13,7 @@
 
 import torch
 import numpy as np
-from net import PacmanNet
+from net_prediction import PacmanNet
 import os
 from util import manhattanDistance
 from game import Directions
@@ -368,8 +368,7 @@ class NeuralAgent(Agent):
         # Convertir a tensor
         state_tensor = torch.FloatTensor(state_matrix).unsqueeze(0).to(self.device)
         
-        # Asegurarse de que el modelo esté en modo evaluación (importante para BatchNorm/Dropout)
-        self.model.eval()
+        # Obtener predicciones
         with torch.no_grad():
             output = self.model(state_tensor)
             probabilities = torch.nn.functional.softmax(output, dim=1).cpu().numpy()[0]
@@ -432,8 +431,6 @@ class NeuralAgent(Agent):
         state_matrix = self.state_to_matrix(state)
         state_tensor = torch.FloatTensor(state_matrix).unsqueeze(0).to(self.device)
         
-        # Asegurarse de que el modelo esté en modo evaluación (importante para BatchNorm/Dropout)
-        self.model.eval()
         with torch.no_grad():
             output = self.model(state_tensor)
             probabilities = torch.nn.functional.softmax(output, dim=1).cpu().numpy()[0]
@@ -504,21 +501,54 @@ class AlphaBetaNeuralAgent(Agent):
         print(f"AlphaBetaNeuralAgent initialized, device: {self.device}, depth: {self.depth}")
 
     def load_model(self, model_path):
+        """Carga el modelo desde el archivo guardado (compatible con modelos legacy y nuevos)."""
         try:
             if not os.path.exists(model_path):
-                print(f"ERROR: Value model not found at {model_path}")
+                print(f"ERROR: No se encontró el modelo en {model_path}")
                 return False
+
             checkpoint = torch.load(model_path, map_location=self.device)
             self.input_size = checkpoint['input_size']
-            # ValueNet: input_shape, hidden_size
-            from rl_net.net_state_dqn import StateValueNet
-            self.model = StateValueNet(self.input_size, 128).to(self.device)
-            self.model.load_state_dict(checkpoint['model_state_dict'])
-            self.model.eval()
-            print(f"Value model loaded from {model_path}")
-            return True
+
+            # Try to load with the current PacmanNet architecture
+            try:
+                self.model = PacmanNet(self.input_size, 128, 5).to(self.device)
+                self.model.load_state_dict(checkpoint['model_state_dict'])
+                self.model.eval()
+                print(f"Model loaded successfully from {model_path}")
+                print(f"Input size: {self.input_size}")
+                return True
+            except RuntimeError as e:
+                # Try to load as a legacy model with fc1/fc2/fc3 keys
+                state_dict = checkpoint['model_state_dict']
+                # Only legacy if all keys start with 'fc' and none with 'model'
+                if all(k.startswith('fc') for k in state_dict.keys()) and not any(k.startswith('model') for k in state_dict.keys()):
+                    import torch.nn as nn
+                    class LegacyPacmanNet(nn.Module):
+                        def __init__(self, input_shape, hidden_size, num_actions):
+                            super().__init__()
+                            input_features = input_shape[0] * input_shape[1]
+                            self.fc1 = nn.Linear(input_features, hidden_size * 4)
+                            self.fc2 = nn.Linear(hidden_size * 4, hidden_size * 2)
+                            self.fc3 = nn.Linear(hidden_size * 2, num_actions)
+                            self.relu = nn.ReLU()
+                        def forward(self, x):
+                            x = x.view(x.size(0), -1)
+                            x = self.relu(self.fc1(x))
+                            x = self.relu(self.fc2(x))
+                            x = self.fc3(x)
+                            return x
+                    self.model = LegacyPacmanNet(self.input_size, 128, 5).to(self.device)
+                    self.model.load_state_dict(state_dict)
+                    self.model.eval()
+                    print(f"Legacy model loaded successfully from {model_path}")
+                    print(f"Input size: {self.input_size}")
+                    return True
+                else:
+                    print(f"Error loading model: incompatible state_dict structure.\n{e}")
+                    return False
         except Exception as e:
-            print(f"Error loading value model: {e}")
+            print(f"Error loading model: {e}")
             return False
 
     def state_to_matrix(self, state):

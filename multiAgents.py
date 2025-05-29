@@ -263,7 +263,7 @@ class NeuralAgent(Agent):
     A Pacman agent that uses a neural network to make decisions
     based on the evaluation of the game state.
     """
-    def __init__(self, model_path="models/pacman_dqn_v1.5_best_reward.pth"):
+    def __init__(self, model_path="models/pacman_dqn_v1.6.pth"):
         super().__init__()
         self.model = None
         self.input_size = None

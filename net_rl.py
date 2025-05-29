@@ -35,10 +35,11 @@ LEARNING_RATE = 0.0001
 GAMMA = 0.99
 EPS_START = 1.0
 EPS_END = 0.01
-EPS_DECAY = 0.999
-MEMORY_SIZE = 30000
-TARGET_UPDATE = 100
-NUM_EPISODES = 3000
+EPS_DECAY_STEPS = 15000  # Сколько эпизодов нужно для снижения epsilon от EPS_START до EPS_END
+TAU = 0.0005  # Параметр мягкого обновления
+MEMORY_SIZE = 50000
+TARGET_UPDATE = 1000
+NUM_EPISODES = 30000
 MAX_STEPS = 500
 MODELS_DIR = "models"
 
@@ -110,6 +111,7 @@ def optimize_model(policy_net, target_net, memory, optimizer, device):
     dones = torch.FloatTensor(dones).to(device)
 
     q_values = policy_net(states).gather(1, actions.unsqueeze(1)).squeeze(1)
+    q_values = torch.clamp(q_values, -50, 50)
     # --- Double DQN target calculation ---
     with torch.no_grad():
         # 1. Выбрать действия с максимальным Q по policy_net
@@ -137,7 +139,7 @@ def save_model(model, input_size, model_path="models/pacman_dqn.pth"):
     print(f"Saved model keys: {list(model_info.keys())}")
 
 # --- Metrics/Logging/Plotting Setup ---
-MODEL_VERSION = "v1.5"
+MODEL_VERSION = "v2.2"
 MODEL_NAME = f"pacman_dqn_{MODEL_VERSION}"
 LOGS_DIR = "logs"
 METRICS_DIR = "metrics"
@@ -304,9 +306,15 @@ def main():
                 max_q, min_q, mean_q, epsilon
             ])
 
-        epsilon = max(EPS_END, epsilon * EPS_DECAY)
-        if episode % TARGET_UPDATE == 0:
-            target_net.load_state_dict(policy_net.state_dict())
+        # Линейное снижение epsilon
+        epsilon = max(EPS_END, EPS_START - (EPS_START - EPS_END) * (episode / EPS_DECAY_STEPS))
+
+        # --- Мягкое обновление целевой сети (soft update) ---
+        target_net_state_dict = target_net.state_dict()
+        policy_net_state_dict = policy_net.state_dict()
+        for key in policy_net_state_dict:
+            target_net_state_dict[key] = (1 - TAU) * target_net_state_dict[key] + TAU * policy_net_state_dict[key]
+        target_net.load_state_dict(target_net_state_dict)
 
         print(f"Episode {episode+1}/{NUM_EPISODES} | "
               f"Total reward: {total_reward:.2f} | "
@@ -315,8 +323,7 @@ def main():
               f"{'WIN' if win else ('LOSE' if lose else '')} | "
               f"MEMORY_SIZE: {len(memory)} | "
               f"SEED: {getattr(seed, 'PACMAN_SEED', 'N/A')}")
-
-        # Every 100 episodes, print aggregated metrics
+               # Every 100 episodes, print aggregated metrics
         if (episode + 1) % 100 == 0:
             avg_reward = np.mean(episode_rewards[-100:])
             avg_loss_100 = np.mean([l for l in episode_losses[-100:] if l is not None])
@@ -340,6 +347,7 @@ def main():
                 best_winrate_episode = episode + 1
                 save_model(policy_net, input_shape, model_path=best_winrate_model_path)
                 print(f"Best win rate model saved at episode {best_winrate_episode} with win rate {best_win_rate:.2f}%")
+
 
     # Save last model as before
     save_model(policy_net, input_shape, model_path=f"models/{MODEL_NAME}.pth")

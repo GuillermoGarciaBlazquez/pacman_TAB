@@ -21,7 +21,7 @@ HIDDEN_SIZE = 128
 NUM_ACTIONS = 5  # Stop, North, South, East, West
 BATCH_SIZE = 64
 LEARNING_RATE = 0.001
-NUM_EPOCHS = 100
+NUM_EPOCHS = 50
 MODELS_DIR = "models"
 
 # Mapeo de acciones a índices
@@ -52,36 +52,34 @@ class PacmanDataset(Dataset):
 class PacmanNet(nn.Module):
     def __init__(self, input_size, hidden_size, output_size):
         super(PacmanNet, self).__init__()
+
         self.input_features = input_size[0] * input_size[1]
-        # Nuevo variante архитектуры
-        self.fc1 = nn.Linear(self.input_features, hidden_size * 4)
-        self.bn1 = nn.BatchNorm1d(hidden_size * 4)
-        self.fc2 = nn.Linear(hidden_size * 4, hidden_size * 2)
-        self.bn2 = nn.BatchNorm1d(hidden_size * 2)
-        self.fc3 = nn.Linear(hidden_size * 2, hidden_size)
-        self.bn3 = nn.BatchNorm1d(hidden_size)
-        self.fc4 = nn.Linear(hidden_size, output_size)
-        self.act = nn.LeakyReLU(0.1)
-        self.dropout = nn.Dropout(0.4)
+
+        self.model = nn.Sequential(
+            nn.Linear(self.input_features, hidden_size * 4),
+            nn.BatchNorm1d(hidden_size * 4),
+            nn.LeakyReLU(),
+            nn.Dropout(0.4),
+
+            nn.Linear(hidden_size * 4, hidden_size * 2),
+            nn.BatchNorm1d(hidden_size * 2),
+            nn.LeakyReLU(),
+            nn.Dropout(0.4),
+
+            nn.Linear(hidden_size * 2, hidden_size),
+            nn.BatchNorm1d(hidden_size),
+            nn.LeakyReLU(),
+            nn.Dropout(0.3),
+
+            nn.Linear(hidden_size, output_size)
+        )
 
     def forward(self, x):
-        # Input shape: (batch_size, height, width)
-        #print(f"Forma de entrada: {x.shape}")
-        # Aplanar la entrada
-        x = x.view(x.size(0), -1)  # Shape: (batch_size, height*width)
-        
-        # Capas fully connected
-        x = self.act(self.bn1(self.fc1(x)))
-        x = self.dropout(x)
-        x = self.act(self.bn2(self.fc2(x)))
-        x = self.dropout(x)
-        x = self.act(self.bn3(self.fc3(x)))
-        x = self.dropout(x)
-        x = self.fc4(x)
-        
-        return x
+        x = x.view(x.size(0), -1)  # Преобразуем карту в вектор
+        return self.model(x)
 
-def load_and_merge_data(data_dir="pacman_wins"):
+
+def load_and_merge_data(data_dir="pacman_data"):
     """Carga todos los archivos CSV de partidas y los combina en un único DataFrame"""
     all_maps = []
     all_actions = []
@@ -130,74 +128,88 @@ def preprocess_maps(maps):
 
 
 def train_model(model, train_loader, test_loader, device, num_epochs=NUM_EPOCHS):
-    """Entrena el modelo con el dataset proporcionado"""
+    """
+    Train the model and print train/val loss and accuracy for each epoch (not per batch),
+    with summary for overfitting/underfitting analysis.
+    """
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE)
     
     best_accuracy = 0.0
     best_model_state = None
+
+    train_losses = []
+    val_losses = []
+    train_accuracies = []
+    val_accuracies = []
     
     print(f"Comenzando entrenamiento por {num_epochs} épocas...")
     
     for epoch in range(num_epochs):
-        # Entrenamiento
+        # Training
         model.train()
         train_loss = 0.0
         train_correct = 0
         train_total = 0
         
-        for batch_idx, (maps, actions) in enumerate(train_loader):
+        for maps, actions in train_loader:
             maps, actions = maps.to(device), actions.to(device)
-            
-            # Forward pass
             outputs = model(maps)
             loss = criterion(outputs, actions)
-            
-            # Backward pass y optimización
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-            
-            # Estadísticas
-            train_loss += loss.item()
+            train_loss += loss.item() * actions.size(0)
             _, predicted = outputs.max(1)
             train_total += actions.size(0)
             train_correct += predicted.eq(actions).sum().item()
-            
-            if (batch_idx + 1) % 10 == 0:
-                print(f'Epoch: {epoch+1}/{num_epochs}, Batch: {batch_idx+1}/{len(train_loader)}, Loss: {train_loss/(batch_idx+1):.4f}, Acc: {100.*train_correct/train_total:.2f}%')
         
-        # Evaluación
+        avg_train_loss = train_loss / train_total
+        train_acc = 100. * train_correct / train_total
+        train_losses.append(avg_train_loss)
+        train_accuracies.append(train_acc)
+
+        # Validation
         model.eval()
-        test_loss = 0.0
-        test_correct = 0
-        test_total = 0
-        
+        val_loss = 0.0
+        val_correct = 0
+        val_total = 0
         with torch.no_grad():
             for maps, actions in test_loader:
                 maps, actions = maps.to(device), actions.to(device)
                 outputs = model(maps)
                 loss = criterion(outputs, actions)
-                
-                test_loss += loss.item()
+                val_loss += loss.item() * actions.size(0)
                 _, predicted = outputs.max(1)
-                test_total += actions.size(0)
-                test_correct += predicted.eq(actions).sum().item()
-        
-        test_accuracy = 100. * test_correct / test_total
-        print(f'Epoch: {epoch+1}/{num_epochs}, Train Loss: {train_loss/len(train_loader):.4f}, Test Loss: {test_loss/len(test_loader):.4f}, Test Acc: {test_accuracy:.2f}%')
-        
-        # Guardar el mejor modelo
-        if test_accuracy > best_accuracy:
-            best_accuracy = test_accuracy
+                val_total += actions.size(0)
+                val_correct += predicted.eq(actions).sum().item()
+        avg_val_loss = val_loss / val_total
+        val_acc = 100. * val_correct / val_total
+        val_losses.append(avg_val_loss)
+        val_accuracies.append(val_acc)
+
+        # Print only per epoch (not per batch)
+        print(f"Epoch {epoch+1}/{num_epochs} | Train loss: {avg_train_loss:.4f} | Val loss: {avg_val_loss:.4f} | Train acc: {train_acc:.2f}% | Val acc: {val_acc:.2f}%")
+
+        if val_acc > best_accuracy:
+            best_accuracy = val_acc
             best_model_state = model.state_dict().copy()
-            print(f'¡Nuevo mejor modelo con {best_accuracy:.2f}% de precisión!')
-    
-    # Cargar el mejor modelo
+            print(f'New best model with {best_accuracy:.2f}% val accuracy!')
+
     if best_model_state:
         model.load_state_dict(best_model_state)
-        print(f'Modelo final: precisión en test {best_accuracy:.2f}%')
-    
+        print(f'Final model: best val accuracy {best_accuracy:.2f}%')
+
+    # Print summary for analysis
+    print("\n=== Training summary ===")
+    print("Epoch | Train loss | Val loss | Train acc | Val acc")
+    for i in range(num_epochs):
+        print(f"{i+1:5d} | {train_losses[i]:10.4f} | {val_losses[i]:8.4f} | {train_accuracies[i]:9.2f}% | {val_accuracies[i]:7.2f}%")
+    print("=======================")
+    print("\nInterpretation tips:")
+    print("Train loss ↓, Val loss ↑ or steady → overfitting")
+    print("Train and Val loss ↓, but slowly → still learning, but slow")
+    print("Val metric (acc) grows a bit, loss drops → normal, training almost done")
     return model
 
 def save_model(model, input_size, model_path="models/pacman_model.pth"):

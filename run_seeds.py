@@ -4,10 +4,10 @@ import os
 import shutil
 import glob
 
-START_SEED = 181
-NUM_RUNS = 300  # Number of runs
+START_SEED = 596
+NUM_RUNS = 500  # Number of runs
 PACMAN_SCRIPT = "pacman.py"
-AGENT = "AlphaBetaAgent"
+AGENT = "ReflexAgent"
 RUNS_DIR = "runs"
 WINS_DIR = os.path.join(RUNS_DIR, "wins")
 DATA_DIR = "pacman_data"

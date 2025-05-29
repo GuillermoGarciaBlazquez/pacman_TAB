@@ -49,6 +49,13 @@ class PacmanGymEnv(gym.Env):
             reward = current_score - self.prev_score
             self.prev_score = current_score
             self.done = self.state.isWin() or self.state.isLose()
+            # --- Reward shaping for better long-term behavior ---
+            if self.state.isWin():
+                # reward += 500  # Big bonus for winning
+                info['win'] = True
+            elif self.state.isLose():
+                # reward -= 100  # Big penalty for losing
+                info['win'] = False
         except Exception:
             self.done = True
 

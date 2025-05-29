@@ -478,7 +478,7 @@ class GhostRules:
             if not state.data._win:
                 state.data.scoreChange -= 500
                 state.data._lose = True
-    collide = staticmethod(collide)
+    collide = staticmethod(collide) 
 
     def canKill(pacmanPosition, ghostPosition):
         return manhattanDistance(ghostPosition, pacmanPosition) <= COLLISION_TOLERANCE

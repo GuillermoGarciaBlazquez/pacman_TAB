@@ -263,7 +263,7 @@ class NeuralAgent(Agent):
     A Pacman agent that uses a neural network to make decisions
     based on the evaluation of the game state.
     """
-    def __init__(self, model_path="models/pacman_dqn.pth"):
+    def __init__(self, model_path="models/pacman_dqn_v1.5_best_reward.pth"):
         super().__init__()
         self.model = None
         self.input_size = None
@@ -300,9 +300,12 @@ class NeuralAgent(Agent):
             
             # Create and load the model
             self.model = PacmanNet(self.input_size, 128, 5).to(self.device)
-            self.model.load_state_dict(checkpoint['model_state_dict'])
-            self.model.eval()  # Evaluation mode
-            
+            try:
+                self.model.load_state_dict(checkpoint['model_state_dict'])
+            except Exception as e:
+                print(f"Warning: Model state_dict mismatch or error: {e}")
+                return False
+            self.model.eval()  # Always set to eval mode for inference
             print(f"Model loaded successfully from {model_path}")
             print(f"Input size: {self.input_size}")
             return True
@@ -368,7 +371,8 @@ class NeuralAgent(Agent):
         # Convert to tensor
         state_tensor = torch.FloatTensor(state_matrix).unsqueeze(0).to(self.device)
         
-        # Get predictions
+        # Always set model to eval mode before inference
+        self.model.eval()
         with torch.no_grad():
             output = self.model(state_tensor)
             probabilities = torch.nn.functional.softmax(output, dim=1).cpu().numpy()[0]
@@ -431,6 +435,8 @@ class NeuralAgent(Agent):
         state_matrix = self.state_to_matrix(state)
         state_tensor = torch.FloatTensor(state_matrix).unsqueeze(0).to(self.device)
         
+        # Always set model to eval mode before inference
+        self.model.eval()
         with torch.no_grad():
             output = self.model(state_tensor)
             probabilities = torch.nn.functional.softmax(output, dim=1).cpu().numpy()[0]

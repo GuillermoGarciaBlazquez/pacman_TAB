@@ -6,7 +6,7 @@ from seed import PACMAN_SEED
 import torch
 import torch.nn as nn
 import torch.optim as optim
-import seed  # Импортируем seed как модуль
+import seed  # Import seed as a module
 import sys
 import csv
 import matplotlib.pyplot as plt
@@ -31,13 +31,13 @@ np.random.seed(PACMAN_SEED)
 HIDDEN_SIZE = 128
 NUM_ACTIONS = 5  # Stop, North, South, East, West
 BATCH_SIZE = 64
-LEARNING_RATE = 0.01
+LEARNING_RATE = 0.0001
 GAMMA = 0.99
 EPS_START = 1.0
-EPS_END = 0.05
-EPS_DECAY = 0.995
+EPS_END = 0.01
+EPS_DECAY = 0.999
 MEMORY_SIZE = 30000
-TARGET_UPDATE = 10
+TARGET_UPDATE = 100
 NUM_EPISODES = 3000
 MAX_STEPS = 500
 MODELS_DIR = "models"
@@ -58,17 +58,17 @@ class DQNPacmanNet(nn.Module):
         self.input_features = input_shape[0] * input_shape[1]
         self.model = nn.Sequential(
             nn.Linear(self.input_features, hidden_size * 4),
-            nn.BatchNorm1d(hidden_size * 4),
+            # nn.BatchNorm1d(hidden_size * 4),
             nn.LeakyReLU(),
-            nn.Dropout(0.4),
+            nn.Dropout(0.2),
             nn.Linear(hidden_size * 4, hidden_size * 2),
-            nn.BatchNorm1d(hidden_size * 2),
+            # nn.BatchNorm1d(hidden_size * 2),
             nn.LeakyReLU(),
-            nn.Dropout(0.4),
+            nn.Dropout(0.2),
             nn.Linear(hidden_size * 2, hidden_size),
-            nn.BatchNorm1d(hidden_size),
+            # nn.BatchNorm1d(hidden_size),
             nn.LeakyReLU(),
-            nn.Dropout(0.3),
+            nn.Dropout(0.1),
             nn.Linear(hidden_size, num_actions)
         )
 
@@ -89,10 +89,11 @@ class ReplayMemory:
         return len(self.memory)
 
 def select_action(state, policy_net, epsilon, device):
+    # Always ensure eval mode for deterministic action selection (BatchNorm & Dropout OFF)
+    policy_net.eval()
     if random.random() < epsilon:
         return random.randrange(NUM_ACTIONS)
     with torch.no_grad():
-        policy_net.eval()  # Ensure eval mode for BatchNorm
         state = torch.FloatTensor(state).unsqueeze(0).to(device)
         q_values = policy_net(state)
         return q_values.argmax().item()
@@ -109,8 +110,13 @@ def optimize_model(policy_net, target_net, memory, optimizer, device):
     dones = torch.FloatTensor(dones).to(device)
 
     q_values = policy_net(states).gather(1, actions.unsqueeze(1)).squeeze(1)
-    next_q_values = target_net(next_states).max(1)[0]
-    expected_q_values = rewards + (GAMMA * next_q_values * (1 - dones))
+    # --- Double DQN target calculation ---
+    with torch.no_grad():
+        # 1. Выбрать действия с максимальным Q по policy_net
+        next_actions = policy_net(next_states).argmax(1, keepdim=True)
+        # 2. Получить Q этих действий по target_net
+        next_q_values = target_net(next_states).gather(1, next_actions).squeeze(1)
+        expected_q_values = rewards + (GAMMA * next_q_values * (1 - dones))
     loss = nn.MSELoss()(q_values, expected_q_values.detach())
 
     optimizer.zero_grad()
@@ -131,7 +137,7 @@ def save_model(model, input_size, model_path="models/pacman_dqn.pth"):
     print(f"Saved model keys: {list(model_info.keys())}")
 
 # --- Metrics/Logging/Plotting Setup ---
-MODEL_VERSION = "v1.0"
+MODEL_VERSION = "v1.5"
 MODEL_NAME = f"pacman_dqn_{MODEL_VERSION}"
 LOGS_DIR = "logs"
 METRICS_DIR = "metrics"
@@ -172,6 +178,7 @@ def main():
     policy_net = DQNPacmanNet(input_shape, HIDDEN_SIZE, NUM_ACTIONS).to(device)
     target_net = DQNPacmanNet(input_shape, HIDDEN_SIZE, NUM_ACTIONS).to(device)
     target_net.load_state_dict(policy_net.state_dict())
+    # Always set target_net to eval mode (no Dropout/BatchNorm randomness)
     target_net.eval()
 
     optimizer = optim.Adam(policy_net.parameters(), lr=LEARNING_RATE)
@@ -179,7 +186,7 @@ def main():
 
     epsilon = EPS_START
 
-    # Метрики
+    # Metrics
     episode_rewards = []
     episode_losses = []
     episode_wins = []
@@ -199,14 +206,21 @@ def main():
             "max_q", "min_q", "mean_q", "epsilon"
         ])
 
+    best_reward = float('-inf')
+    best_win_rate = float('-inf')
+    best_reward_model_path = f"models/{MODEL_NAME}_best_reward.pth"
+    best_winrate_model_path = f"models/{MODEL_NAME}_best_winrate.pth"
+    best_reward_episode = 0
+    best_winrate_episode = 0
+
     for episode in range(NUM_EPISODES):
-        # Меняем сид только раз в 500 эпизодов
-        if episode % 500 == 0:
-            new_seed = PACMAN_SEED + episode // 500
-            setattr(seed, 'PACMAN_SEED', new_seed)
-            torch.manual_seed(new_seed)
-            random.seed(new_seed)
-            np.random.seed(new_seed)
+        # Change seed only once every 500 episodes
+        # if episode % 500 == 0:
+        #     new_seed = PACMAN_SEED + episode // 500
+        #     setattr(seed, 'PACMAN_SEED', new_seed)
+        #     torch.manual_seed(new_seed)
+        #     random.seed(new_seed)
+        #     np.random.seed(new_seed)
 
         state = env.reset()
         total_reward = 0
@@ -219,8 +233,9 @@ def main():
         for t in range(MAX_STEPS):
             action = select_action(state, policy_net, epsilon, device)
             # --- Metrics: Q-values ---
+            # Always ensure eval mode before Q-value logging
+            policy_net.eval()
             with torch.no_grad():
-                policy_net.eval()
                 s = torch.FloatTensor(state).unsqueeze(0).to(device)
                 q_values = policy_net(s).cpu().numpy().flatten()
                 q_values_list.append(q_values)
@@ -240,8 +255,13 @@ def main():
                 dones = torch.FloatTensor(dones).to(device)
 
                 q_values = policy_net(states).gather(1, actions.unsqueeze(1)).squeeze(1)
-                next_q_values = target_net(next_states).max(1)[0]
-                expected_q_values = rewards + (GAMMA * next_q_values * (1 - dones))
+                # --- Double DQN target calculation ---
+                with torch.no_grad():
+                    # 1. Выбрать действия с максимальным Q по policy_net
+                    next_actions = policy_net(next_states).argmax(1, keepdim=True)
+                    # 2. Получить Q этих действий по target_net
+                    next_q_values = target_net(next_states).gather(1, next_actions).squeeze(1)
+                    expected_q_values = rewards + (GAMMA * next_q_values * (1 - dones))
                 loss = nn.MSELoss()(q_values, expected_q_values.detach())
 
                 optimizer.zero_grad()
@@ -251,17 +271,10 @@ def main():
             else:
                 loss = None
 
-            # Проверка на победу/проигрыш (если env возвращает info['win'] или info['lose'])
-            # Если нет, используем reward или done
+            # Check for win/lose via info['win'] and done
             if done:
-                # Попробуйте получить win/lose из info, иначе определяйте по reward
-                if 'win' in info:
-                    win = info['win']
-                    lose = not win
-                else:
-                    # Примитивная эвристика: если reward большой, значит победа
-                    win = reward > 100
-                    lose = not win
+                win = bool(info.get('win', False))
+                lose = not win
                 break
 
         avg_loss = np.mean(losses) if losses else 0.0
@@ -303,7 +316,7 @@ def main():
               f"MEMORY_SIZE: {len(memory)} | "
               f"SEED: {getattr(seed, 'PACMAN_SEED', 'N/A')}")
 
-        # Каждые 100 эпизодов выводим агрегированные метрики
+        # Every 100 episodes, print aggregated metrics
         if (episode + 1) % 100 == 0:
             avg_reward = np.mean(episode_rewards[-100:])
             avg_loss_100 = np.mean([l for l in episode_losses[-100:] if l is not None])
@@ -314,6 +327,21 @@ def main():
                   f"Win rate: {win_rate:.1f}% | Lose rate: {lose_rate:.1f}%")
             print("-------------------------")
 
+            # Save best by reward
+            if avg_reward > best_reward:
+                best_reward = avg_reward
+                best_reward_episode = episode + 1
+                save_model(policy_net, input_shape, model_path=best_reward_model_path)
+                print(f"Best avg reward model saved at episode {best_reward_episode} with avg reward {best_reward:.2f}")
+
+            # Save best by win rate
+            if win_rate > best_win_rate:
+                best_win_rate = win_rate
+                best_winrate_episode = episode + 1
+                save_model(policy_net, input_shape, model_path=best_winrate_model_path)
+                print(f"Best win rate model saved at episode {best_winrate_episode} with win rate {best_win_rate:.2f}%")
+
+    # Save last model as before
     save_model(policy_net, input_shape, model_path=f"models/{MODEL_NAME}.pth")
     print(f"Total execution time: {time.time() - start_time:.2f} seconds")
 

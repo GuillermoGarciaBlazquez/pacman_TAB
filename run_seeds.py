@@ -26,6 +26,10 @@ def main():
         help="Nombre del agente Pacman a usar (p.ej. ReflexAgent)"
     )
     parser.add_argument(
+        "-q", "--quiet", action="store_true",
+        help="Ejecutar pacman en modo silencioso (sin interfaz gráfica)"
+    )
+    parser.add_argument(
         "--minSeed", type=int, default=1,
         help="Valor mínimo de la semilla (inclusive)"
     )
@@ -56,11 +60,13 @@ def main():
         with open("seed.py", "w") as f:
             f.write(f"PACMAN_SEED = {seed}\n")
 
-        # Ejecutar pacman.py con el agente indicado
-        result = subprocess.run(
-            ["python", PACMAN_SCRIPT, "-p", args.agent],
-            capture_output=True, text=True
-        )
+        # Construir comando para pacman.py
+        cmd = ["python", PACMAN_SCRIPT, "-p", args.agent]
+        if args.quiet:
+            cmd.append("-q")  # añade el flag de modo silencioso
+
+        # Ejecutar pacman.py
+        result = subprocess.run(cmd, capture_output=True, text=True)
         output = result.stdout
 
         # Guardar log de la partida
@@ -93,6 +99,7 @@ def main():
 
         # Pequeña pausa para cambiar la semilla de random
         time.sleep(0.01)
+
 
 if __name__ == "__main__":
     main()

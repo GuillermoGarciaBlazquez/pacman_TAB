@@ -1,0 +1,7 @@
+Reply mode: False
+Pacman emerges victorious! Score: 2106
+Datos del juego 19 guardados en pacman_data\game_19.csv
+Average Score: 2106.0
+Scores:        2106.0
+Win Rate:      1/1 (1.00)
+Record:        Win

@@ -13,12 +13,14 @@
 
 import torch
 import numpy as np
-from net import PacmanNet
+from rl_net.net_rl import DQNPacmanNet  # Import the correct DQN network
+from net_prediction import PacmanNet  # Import the PacmanNet for legacy compatibility
 import os
 from util import manhattanDistance
 from game import Directions
 import random, util
-random.seed(42)  # For reproducibility
+from seed import PACMAN_SEED
+random.seed(PACMAN_SEED)
 from game import Agent
 from pacman import GameState
 
@@ -146,6 +148,9 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
     Minimax agent with alpha-beta pruning
     """
 
+    def __init__(self, evalFn = 'scoreEvaluationFunction', depth = '4'):
+        super().__init__(evalFn, depth)
+
     def getAction(self, gameState: GameState):
         """
         Returns the alpha-beta action using self.depth and self.evaluationFunction
@@ -259,7 +264,7 @@ class NeuralAgent(Agent):
     Un agente de Pacman que utiliza una red neuronal para tomar decisiones
     basado en la evaluación del estado del juego.
     """
-    def __init__(self, model_path="models/pacman_model.pth"):
+    def __init__(self, model_path="rl_net/models/pacman_dqn_v1.0.pth"):
         super().__init__()
         self.model = None
         self.input_size = None
@@ -474,10 +479,210 @@ class NeuralAgent(Agent):
         # Devolver la mejor acción
         return successors[0][0]
 
-# Definir una función para crear el agente
+
+# Define a function to create the agent
 def createNeuralAgent(model_path="models/pacman_model.pth"):
     """
-    Función de fábrica para crear un agente neuronal.
-    Útil para integrarse con la estructura de pacman.py.
+    Factory function to create a neural agent.
+    Useful for integration with pacman.py structure.
     """
     return NeuralAgent(model_path)
+
+
+class DQNAgent(Agent):
+    """
+    Pacman agent that uses a DQN (Deep Q-Network) trained with RL to select actions.
+    The network outputs Q-values for all actions; the agent picks the action with the highest Q-value.
+    """
+    def __init__(self, model_path="rl_net/models/pacman_dqn_v2.2_best_reward.pth"):
+        super().__init__()
+        self.model = None
+        self.input_shape = None
+        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        self.load_model(model_path)
+        self.idx_to_action = {
+            0: Directions.STOP,
+            1: Directions.NORTH,
+            2: Directions.SOUTH,
+            3: Directions.EAST,
+            4: Directions.WEST
+        }
+        print(f"DQNAgent initialized, device: {self.device}")
+
+    def load_model(self, model_path):
+        if not os.path.exists(model_path):
+            print(f"ERROR: Model not found at {model_path}")
+            self.model = None
+            return False
+        checkpoint = torch.load(model_path, map_location=self.device)
+        self.input_shape = checkpoint['input_size']
+        self.model = DQNPacmanNet(self.input_shape, 128, 5).to(self.device)
+        self.model.load_state_dict(checkpoint['model_state_dict'])
+        self.model.eval()
+        print(f"DQN model loaded from {model_path}")
+        return True
+
+    def state_to_matrix(self, state):
+        # Convert the GameState to a normalized numeric matrix (same as in RL training)
+        walls = state.getWalls()
+        width, height = walls.width, walls.height
+        numeric_map = np.zeros((width, height), dtype=np.float32)
+        for x in range(width):
+            for y in range(height):
+                if not walls[x][y]:
+                    numeric_map[x][y] = 1
+        food = state.getFood()
+        for x in range(width):
+            for y in range(height):
+                if food[x][y]:
+                    numeric_map[x][y] = 2
+        for x, y in state.getCapsules():
+            numeric_map[x][y] = 3
+        for ghost_state in state.getGhostStates():
+            gx, gy = int(ghost_state.getPosition()[0]), int(ghost_state.getPosition()[1])
+            if ghost_state.scaredTimer > 0:
+                numeric_map[gx][gy] = 6
+            else:
+                numeric_map[gx][gy] = 4
+        px, py = state.getPacmanPosition()
+        numeric_map[int(px)][int(py)] = 5
+        numeric_map = numeric_map / 6.0
+        return numeric_map
+
+    def getAction(self, state):
+        if self.model is None:
+            # If model is not loaded, fallback to random legal action
+            legal_actions = state.getLegalActions()
+            print("WARNING: DQN model not loaded, choosing random action.")
+            return random.choice(legal_actions)
+        
+        # Convert state to input matrix
+        state_matrix = self.state_to_matrix(state)
+        state_tensor = torch.FloatTensor(state_matrix).unsqueeze(0).to(self.device)
+        self.model.eval()
+        with torch.no_grad():
+            q_values = self.model(state_tensor).cpu().numpy().flatten()
+        legal_actions = state.getLegalActions()
+        # Map legal actions to their indices
+        legal_indices = [idx for idx, act in self.idx_to_action.items() if act in legal_actions]
+        # Pick the legal action with the highest Q-value
+        best_idx = max(legal_indices, key=lambda idx: q_values[idx])
+        return self.idx_to_action[best_idx]
+
+class AlphaBetaNeuralAgent(Agent):
+    """
+    AlphaBeta agent that uses a value network (PacmanNet) as its evaluation function.
+    """
+    def __init__(self, model_path="model/pacman_model_prediction_1.pth", depth=3):
+        super().__init__()
+        self.model = None
+        self.input_size = None
+        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        self.depth = int(depth)
+        self.load_model(model_path)
+        print(f"AlphaBetaNeuralAgent inicializado, dispositivo: {self.device}, profundidad: {self.depth}")
+
+    def load_model(self, model_path):
+        if not os.path.exists(model_path):
+            print(f"ERROR: Modelo ValueNet no encontrado en {model_path}")
+            self.model = None
+            return False
+        checkpoint = torch.load(model_path, map_location=self.device)
+        self.input_size = checkpoint['input_size']
+        self.model = PacmanNet(self.input_size, 128, 1).to(self.device)
+        self.model.load_state_dict(checkpoint['model_state_dict'])
+        self.model.eval()
+        print(f"Modelo ValueNet cargado desde {model_path}")
+        return True
+
+    def state_to_matrix(self, state):
+        # Codificación igual que NeuralAgent
+        walls = state.getWalls()
+        width, height = walls.width, walls.height
+        numeric_map = np.zeros((width, height), dtype=np.float32)
+        for x in range(width):
+            for y in range(height):
+                if not walls[x][y]:
+                    numeric_map[x][y] = 1
+        food = state.getFood()
+        for x in range(width):
+            for y in range(height):
+                if food[x][y]:
+                    numeric_map[x][y] = 2
+        for x, y in state.getCapsules():
+            numeric_map[x][y] = 3
+        for ghost_state in state.getGhostStates():
+            gx, gy = int(ghost_state.getPosition()[0]), int(ghost_state.getPosition()[1])
+            if ghost_state.scaredTimer > 0:
+                numeric_map[gx][gy] = 6
+            else:
+                numeric_map[gx][gy] = 4
+        px, py = state.getPacmanPosition()
+        numeric_map[int(px)][int(py)] = 5
+        numeric_map = numeric_map / 6.0
+        return numeric_map
+
+    def value_net_evaluation(self, state):
+        if self.model is None:
+            return state.getScore()
+        state_matrix = self.state_to_matrix(state)
+        state_tensor = torch.FloatTensor(state_matrix).unsqueeze(0).to(self.device)
+        with torch.no_grad():
+            value = self.model(state_tensor).cpu().numpy().flatten()[0]
+        return float(value)
+
+    def getAction(self, gameState):
+        """
+        Returns the alpha-beta action using self.depth and the value net as evaluation.
+        """
+        def alphabeta(agentIndex, depth, state, alpha, beta):
+            if state.isWin() or state.isLose() or depth == self.depth:
+                return self.value_net_evaluation(state)
+            if agentIndex == 0:
+                return maxValue(agentIndex, depth, state, alpha, beta)
+            else:
+                return minValue(agentIndex, depth, state, alpha, beta)
+
+        def maxValue(agentIndex, depth, state, alpha, beta):
+            v = float('-inf')
+            legalActions = state.getLegalActions(agentIndex)
+            if not legalActions:
+                return self.value_net_evaluation(state)
+            for action in legalActions:
+                successor = state.generateSuccessor(agentIndex, action)
+                v = max(v, alphabeta(1, depth, successor, alpha, beta))
+                if v > beta:
+                    return v
+                alpha = max(alpha, v)
+            return v
+
+        def minValue(agentIndex, depth, state, alpha, beta):
+            v = float('inf')
+            legalActions = state.getLegalActions(agentIndex)
+            if not legalActions:
+                return self.value_net_evaluation(state)
+            nextAgent = agentIndex + 1
+            if nextAgent == state.getNumAgents():
+                nextAgent = 0
+                depth += 1
+            for action in legalActions:
+                successor = state.generateSuccessor(agentIndex, action)
+                v = min(v, alphabeta(nextAgent, depth, successor, alpha, beta))
+                if v < alpha:
+                    return v
+                beta = min(beta, v)
+            return v
+
+        bestAction = None
+        bestScore = float('-inf')
+        alpha = float('-inf')
+        beta = float('inf')
+        for action in gameState.getLegalActions(0):
+            successor = gameState.generateSuccessor(0, action)
+            score = alphabeta(1, 0, successor, alpha, beta)
+            if score > bestScore:
+                bestScore = score
+                bestAction = action
+            alpha = max(alpha, score)
+        return bestAction
+

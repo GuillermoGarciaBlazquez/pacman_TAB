@@ -1,0 +1,1 @@
+PACMAN_SEED = 4211

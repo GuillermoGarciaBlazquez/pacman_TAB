@@ -33,6 +33,11 @@ def main():
         "--maxSeed", type=int, default=1000,
         help="Valor máximo de la semilla (inclusive)"
     )
+    parser.add_argument(
+        "-q", "--quietTextGraphics",
+        action="store_true",
+        help="Generate minimal output and no graphics"
+    )
     args = parser.parse_args()
 
     # Directorios de logs y datos

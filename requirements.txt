@@ -53,3 +53,5 @@ typing_extensions
 tzdata 
 unicodedata2 
 urllib3==2.4.0
+scikit-learn
+

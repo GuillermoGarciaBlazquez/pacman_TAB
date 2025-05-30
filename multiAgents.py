@@ -145,80 +145,93 @@ class MinimaxAgent(MultiAgentSearchAgent):
 
 class AlphaBetaAgent(MultiAgentSearchAgent):
     """
-    Minimax agent with alpha-beta pruning
+    Minimax agent with alpha-beta pruning and move ordering.
     """
 
-    def __init__(self, evalFn = 'scoreEvaluationFunction', depth = '4'):
+    def __init__(self, evalFn='scoreEvaluationFunction', depth='2'):
         super().__init__(evalFn, depth)
 
     def getAction(self, gameState: GameState):
         """
-        Returns the alpha-beta action using self.depth and self.evaluationFunction
+        Returns the alpha-beta action using self.depth and self.evaluationFunction,
+        applying move ordering to improve pruning.
         """
         
-        def alphabeta(agentIndex, depth, gameState, alpha, beta):
-            # Base case: Check if the game is over or if we've reached the maximum depth
-            if gameState.isWin() or gameState.isLose() or depth == self.depth:
-                return self.evaluationFunction(gameState)
+        def alphabeta(agentIndex, depth, state, alpha, beta):
+            # Terminal or maximum depth
+            if state.isWin() or state.isLose() or depth == self.depth:
+                return self.evaluationFunction(state)
 
-            # Pacman (maximizer) is agentIndex 0
             if agentIndex == 0:
-                return maxValue(agentIndex, depth, gameState, alpha, beta)
-            # Ghosts (minimizer) are agentIndex 1 or higher
+                return maxValue(agentIndex, depth, state, alpha, beta)
             else:
-                return minValue(agentIndex, depth, gameState, alpha, beta)
+                return minValue(agentIndex, depth, state, alpha, beta)
 
-        def maxValue(agentIndex, depth, gameState, alpha, beta):
-            # Initialize max value
+        def maxValue(agentIndex, depth, state, alpha, beta):
             v = float('-inf')
-            # Get Pacman's legal actions
-            legalActions = gameState.getLegalActions(agentIndex)
-
+            legalActions = state.getLegalActions(agentIndex)
             if not legalActions:
-                return self.evaluationFunction(gameState)
+                return self.evaluationFunction(state)
 
-            # Iterate through all possible actions and update alpha-beta values
+            # Move ordering: sort successors by evaluation descending
+            successors = []
             for action in legalActions:
-                successor = gameState.generateSuccessor(agentIndex, action)
-                v = max(v, alphabeta(1, depth, successor, alpha, beta))  # Ghosts start at index 1
+                succ = state.generateSuccessor(agentIndex, action)
+                score = self.evaluationFunction(succ)
+                successors.append((succ, score))
+            successors.sort(key=lambda x: x[1], reverse=True)
+
+            for succ, _ in successors:
+                v = max(v, alphabeta(1, depth, succ, alpha, beta))
                 if v > beta:
-                    return v  # Prune the remaining branches
+                    return v  # β-cutoff
                 alpha = max(alpha, v)
             return v
 
-        def minValue(agentIndex, depth, gameState, alpha, beta):
-            # Initialize min value
+        def minValue(agentIndex, depth, state, alpha, beta):
             v = float('inf')
-            # Get the current agent's legal actions (ghosts)
-            legalActions = gameState.getLegalActions(agentIndex)
-
+            legalActions = state.getLegalActions(agentIndex)
             if not legalActions:
-                return self.evaluationFunction(gameState)
+                return self.evaluationFunction(state)
 
-            # Get the next agent's index and check if we need to increase depth
+            # Determine next agent and depth
             nextAgent = agentIndex + 1
-            if nextAgent == gameState.getNumAgents():
-                nextAgent = 0  # Go back to Pacman
-                depth += 1  # Increase the depth since we've gone through all agents
+            nextDepth = depth
+            if nextAgent == state.getNumAgents():
+                nextAgent = 0
+                nextDepth += 1
 
-            # Iterate through all possible actions and update alpha-beta values
+            # Move ordering: sort successors by evaluation ascending
+            successors = []
             for action in legalActions:
-                successor = gameState.generateSuccessor(agentIndex, action)
-                v = min(v, alphabeta(nextAgent, depth, successor, alpha, beta))
+                succ = state.generateSuccessor(agentIndex, action)
+                score = self.evaluationFunction(succ)
+                successors.append((succ, score))
+            successors.sort(key=lambda x: x[1])
+
+            for succ, _ in successors:
+                v = min(v, alphabeta(nextAgent, nextDepth, succ, alpha, beta))
                 if v < alpha:
-                    return v  # Prune the remaining branches
+                    return v  # α-cutoff
                 beta = min(beta, v)
             return v
 
-        # Pacman (agentIndex 0) will choose the action with the best alpha-beta score
-        bestAction = None
-        bestScore = float('-inf')
+        # Initial α and β values
         alpha = float('-inf')
         beta = float('inf')
+        bestAction = None
+        bestScore = float('-inf')
 
-        for action in gameState.getLegalActions(0):  # Pacman's legal actions
-            successor = gameState.generateSuccessor(0, action)
-            score = alphabeta(1, 0, successor, alpha, beta)  # Start with Ghost 1, depth 0
+        # Order Pacman's first moves as well
+        initialSuccessors = []
+        for action in gameState.getLegalActions(0):
+            succ = gameState.generateSuccessor(0, action)
+            score = self.evaluationFunction(succ)
+            initialSuccessors.append((action, succ, score))
+        initialSuccessors.sort(key=lambda x: x[2], reverse=True)
+
+        for action, succ, _ in initialSuccessors:
+            score = alphabeta(1, 0, succ, alpha, beta)
             if score > bestScore:
                 bestScore = score
                 bestAction = action

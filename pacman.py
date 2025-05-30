@@ -52,7 +52,6 @@ import types
 import time
 import random
 import os
-from seed import PACMAN_SEED
 ###################################################
 # Ahmed 
 ###################################################
@@ -603,7 +602,7 @@ def readCommand(argv):
     args = dict()
 
     # Fix the random seed
-    random.seed(PACMAN_SEED)
+    random.seed('42')
 
     # Choose a layout
     args['layout'] = layout.getLayout(options.layout)
@@ -743,7 +742,10 @@ def runGames(layout, pacman, ghosts, display, numGames, record, numTraining=0, c
     data_collector = gamedata.GameDataCollector(replay_mode=replay_mode)
 
     # Fijar semilla consistente
-    random.seed(PACMAN_SEED)
+
+    seed = '42'  # o cualquier valor fijo
+
+    random.seed(seed)
     ###################################################
     for i in range(numGames):
         beQuiet = i < numTraining
@@ -777,7 +779,7 @@ def runGames(layout, pacman, ghosts, display, numGames, record, numTraining=0, c
             import pickle
             fname = ('recorded-game-%d' % (i + 1)) + \
                 '-'.join([str(t) for t in time.localtime()[1:6]])
-            f = open(fname, 'wb')
+            f = file(fname, 'w')
             components = {'layout': layout, 'actions': game.moveHistory}
             pickle.dump(components, f)
             f.close()

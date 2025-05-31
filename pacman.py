@@ -52,7 +52,6 @@ import types
 import time
 import random
 import os
-from seed import PACMAN_SEED
 ###################################################
 # Ahmed 
 ###################################################
@@ -60,6 +59,7 @@ import gamedata
 from playback import CSVPlaybackAgent
 # Definimos una variable global para el modo de reproducción
 replay_mode = False
+from seed import PACMAN_SEED
 ###################################################
 
 
@@ -743,7 +743,10 @@ def runGames(layout, pacman, ghosts, display, numGames, record, numTraining=0, c
     data_collector = gamedata.GameDataCollector(replay_mode=replay_mode)
 
     # Fijar semilla consistente
-    random.seed(PACMAN_SEED)
+
+    seed = PACMAN_SEED  # o cualquier valor fijo
+
+    random.seed(seed)
     ###################################################
     for i in range(numGames):
         beQuiet = i < numTraining

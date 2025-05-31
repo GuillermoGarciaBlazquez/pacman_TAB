@@ -21,7 +21,7 @@ HIDDEN_SIZE = 128
 NUM_ACTIONS = 5  # Stop, North, South, East, West
 BATCH_SIZE = 64
 LEARNING_RATE = 0.001
-NUM_EPOCHS = 200
+NUM_EPOCHS = 100
 MODELS_DIR = "models"
 
 # Mapeo de acciones a índices
@@ -80,7 +80,7 @@ class PacmanNet(nn.Module):
         
         return x
 
-def load_and_merge_data(data_dir="pacman_wins"):
+def load_and_merge_data(data_dir="pacman_data"):
     """Carga todos los archivos CSV de partidas y los combina en un único DataFrame"""
     all_maps = []
     all_actions = []
@@ -199,7 +199,7 @@ def train_model(model, train_loader, test_loader, device, num_epochs=NUM_EPOCHS)
     
     return model
 
-def save_model(model, input_size, model_path="models/pacman_model_prediction_1.pth"):
+def save_model(model, input_size, model_path="models/pacman_model.pth"):
     """Guarda el modelo entrenado"""
     if not os.path.exists(os.path.dirname(model_path)):
         os.makedirs(os.path.dirname(model_path))

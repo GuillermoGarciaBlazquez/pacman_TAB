@@ -1,0 +1,13 @@
+Error al cargar el modelo: Error(s) in loading state_dict for PacmanNet:
+	Unexpected key(s) in state_dict: "bn1.weight", "bn1.bias", "bn1.running_mean", "bn1.running_var", "bn1.num_batches_tracked", "bn2.weight", "bn2.bias", "bn2.running_mean", "bn2.running_var", "bn2.num_batches_tracked", "bn3.weight", "bn3.bias", "bn3.running_mean", "bn3.running_var", "bn3.num_batches_tracked", "fc4.weight", "fc4.bias", "bn4.weight", "bn4.bias", "bn4.running_mean", "bn4.running_var", "bn4.num_batches_tracked", "fc5.weight", "fc5.bias", "bn5.weight", "bn5.bias", "bn5.running_mean", "bn5.running_var", "bn5.num_batches_tracked", "fc6.weight", "fc6.bias". 
+	size mismatch for fc2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 256]).
+	size mismatch for fc2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for fc3.weight: copying a param with shape torch.Size([128, 256]) from checkpoint, the shape in current model is torch.Size([5, 128]).
+	size mismatch for fc3.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([5]).
+Reply mode: False
+Pacman died! Score: 319
+Datos del juego 907 guardados en pacman_data/game_907.csv
+Average Score: 319.0
+Scores:        319.0
+Win Rate:      0/1 (0.00)
+Record:        Loss

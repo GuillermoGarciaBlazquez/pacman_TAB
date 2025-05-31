@@ -1,0 +1,7 @@
+Reply mode: False
+Pacman emerges victorious! Score: 1613
+Datos del juego 846 guardados en pacman_data/game_846.csv
+Average Score: 1613.0
+Scores:        1613.0
+Win Rate:      1/1 (1.00)
+Record:        Win

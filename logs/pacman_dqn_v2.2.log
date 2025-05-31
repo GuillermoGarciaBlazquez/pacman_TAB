@@ -1,9 +1,0 @@
-ERROR: Modelo ValueNet no encontrado en model/pacman_model_prediction_1.pth
-AlphaBetaNeuralAgent inicializado, dispositivo: cpu, profundidad: 3
-Reply mode: False
-Pacman emerges victorious! Score: 1846
-Datos del juego 751 guardados en pacman_data/game_751.csv
-Average Score: 1846.0
-Scores:        1846.0
-Win Rate:      1/1 (1.00)
-Record:        Win

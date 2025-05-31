@@ -1,0 +1,7 @@
+Reply mode: False
+Pacman emerges victorious! Score: 1423
+Datos del juego 765 guardados en pacman_data/game_765.csv
+Average Score: 1423.0
+Scores:        1423.0
+Win Rate:      1/1 (1.00)
+Record:        Win

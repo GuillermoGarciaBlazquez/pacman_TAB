@@ -4,18 +4,20 @@ import os
 import shutil
 import glob
 
-START_SEED = 596
-NUM_RUNS = 500  # Number of runs
+START_SEED = 20
+NUM_RUNS = 30  # Number of runs
 PACMAN_SCRIPT = "pacman.py"
-AGENT = "ReflexAgent"
+AGENT = "NeuralAlphaBetaAgent"
 RUNS_DIR = "runs"
 WINS_DIR = os.path.join(RUNS_DIR, "wins")
 DATA_DIR = "pacman_data"
 DATA_WINS_DIR = "pacman_wins"  # Changed: wins now outside pacman_data
+DATA_TRAINING_DIR = "pacman_training"
 
 os.makedirs(RUNS_DIR, exist_ok=True)
 os.makedirs(WINS_DIR, exist_ok=True)
 os.makedirs(DATA_WINS_DIR, exist_ok=True)
+os.makedirs(DATA_TRAINING_DIR, exist_ok=True)
 
 # Count existing win files to avoid overwriting
 existing_win_csvs = glob.glob(os.path.join(DATA_WINS_DIR, "game_*.csv"))
@@ -60,4 +62,11 @@ for i in range(NUM_RUNS):
         win_count += 1
     else:
         print(f"Game with seed={seed} lost.")
+        # If long game (csv > 150 lines), copy to pacman_training
+        if latest_csv:
+            with open(latest_csv, "r", encoding="utf-8") as f:
+                line_count = sum(1 for _ in f)
+            if line_count > 150:
+                training_csv_path = os.path.join(DATA_TRAINING_DIR, os.path.basename(latest_csv))
+                shutil.copy(latest_csv, training_csv_path)
     # time.sleep(1)

@@ -5,10 +5,9 @@ import matplotlib.pyplot as plt
 import glob
 import os
 
-folder = "pacman_data"  # Папка с CSV файлами
+folder = "pacman_data_win/pacman_data" 
 csv_files = glob.glob(os.path.join(folder, "*.csv"))
 
-# Определяем размер карты по первому файлу
 for file in csv_files:
     with open(file, newline='') as f:
         reader = csv.DictReader(f)
@@ -22,7 +21,6 @@ else:
     print("No CSV files found.")
     exit()
 
-# Обрабатываем все файлы
 for file in csv_files:
     with open(file, newline='') as f:
         reader = csv.DictReader(f)
